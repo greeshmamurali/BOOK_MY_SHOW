@@ -458,4 +458,6 @@ class Dummydb {
       'category': 'Concerts'
     },
   ];
+
+  static const List search_list = ['Movies','Sports','Plays','Activities','Events'];
 }
