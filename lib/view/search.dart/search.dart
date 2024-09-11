@@ -83,7 +83,7 @@ class _SearchState extends State<Search> {
                       },
                       child: AnimatedCrossFade(
                           firstChild: Container(
-                            margin: EdgeInsets.only(right: 10,left: 15),
+                            margin: EdgeInsets.symmetric(horizontal: 5),
                             width: 80,
                             height: 25,
                             decoration: BoxDecoration(
@@ -101,6 +101,7 @@ class _SearchState extends State<Search> {
                             ),
                           ),
                           secondChild: Container(
+                              margin: EdgeInsets.only(right: 5,left: 15),
                             width: 85,
                             height: 25,
                             decoration: BoxDecoration(
@@ -108,7 +109,7 @@ class _SearchState extends State<Search> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Center(
                               child: Text(
-                                '${Dummydb.search_list[index]} x',
+                                '${Dummydb.search_list[index]} ×',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w300),
