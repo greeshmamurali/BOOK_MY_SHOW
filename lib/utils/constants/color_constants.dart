@@ -86,4 +86,7 @@ class ColorConstants {
     Color(0xffa6b2be),
     Color(0xff8bbebc),
   ];
+
+  static const Color D_BG = Color(0xffe5e5e5);
+  static const Color OFFER_BG = Color(0xfffcf1ce);
 }

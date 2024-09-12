@@ -677,7 +677,7 @@ class _HomescreenState extends State<Homescreen> {
                       'See All >',
                       style: TextStyle(
                           color: ColorConstants.PRIMARY_COLOR,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w600),
                     ),
                   )
@@ -1163,7 +1163,7 @@ class _HomescreenState extends State<Homescreen> {
           height: 5,
         ),
         SizedBox(
-          height: 230,
+          height: 240,
           child: ListView.separated(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               scrollDirection: Axis.horizontal,
@@ -1260,7 +1260,7 @@ class _HomescreenState extends State<Homescreen> {
   Container lollapaloozaSection() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10),
-      height: 275,
+      height: 280,
       width: double.infinity,
       color: ColorConstants.SEC4_GREY_COLOR.withOpacity(.2),
       child: Column(

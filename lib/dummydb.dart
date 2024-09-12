@@ -8,61 +8,151 @@ class Dummydb {
       'img': ImageConstants.GOAT,
       'rating': '9.0',
       'votes': '475.7K',
-      'name': 'The Greatest of All Time'
+      'name': 'The Greatest of All Time',
+      'D': '2D,IMAX 2D',
+      'lang': 'Tamil, Telugu',
+      'duration': '3h 3m',
+      'genre': 'Action, Drama, Thriller',
+      'age': 'UA',
+      'date': '5 Sep, 2024',
+      'desc':
+          'Consequences of an unknown past haunt the present of a special anti-terrorist squad. How will they confront it?',
+      'thumb': ImageConstants.MD_GOAT
     },
     {
       'img': ImageConstants.BHARATHANATYAM,
       'rating': '9.3',
       'votes': '900',
-      'name': 'Bharathanatyam'
+      'name': 'Bharathanatyam',
+      'D': '2D',
+      'lang': 'Malayalam',
+      'duration': '2h 1m',
+      'genre': 'Drama, Family',
+      'age': 'U',
+      'date': '30 Aug, 2024',
+      'desc':
+          'A proud and traditional family tries everything to protect their reputation from being destroyed by nosy people in their society. To what extent will they go to uphold their image?',
+      'thumb': ImageConstants.MD_BHARATHANATYM
     },
     {
-      'img': ImageConstants.FOOTAGE,
-      'rating': '7.3',
+      'img': ImageConstants.ARM,
+      'rating': '8.3',
       'votes': '600',
-      'name': 'Footage'
+      'name': 'A.R.M',
+      'D': '2D, 3D',
+      'lang': 'Malayalam, Tamil, Telugu, Hindi, Kannada',
+      'duration': '2h 23m',
+      'genre': 'Action, Adventure, Drama, Period',
+      'age': 'UA',
+      'date': '12 Sep, 2024',
+      'desc':
+          "Set in Northern Kerala across the years 1900, 1950, and 1990, this epic tale follows three generations of heroes Maniyan, Kunjikelu, and Ajayan as they strive to protect the land's most vital treasure.",
+      'thumb': ImageConstants.MD_ARM
     },
     {
       'img': ImageConstants.NUNNAKUZHI,
       'rating': '8.5',
       'votes': '12.3K',
-      'name': 'Nunakkuzhi'
+      'name': 'Nunakkuzhi',
+      'D': '2D',
+      'lang': 'Malayalam',
+      'duration': '2h 6m',
+      'genre': 'Comedy, Thriller',
+      'age': 'UA',
+      'date': '15 Aug, 2024',
+      'desc':
+          "A young businessman`s life falls apart when he becomes embroiled in a web of lies and mistaken identities in a search for a misplaced laptop!",
+      'thumb': ImageConstants.MD_NUNNAKUZHI
     },
     {
-      'img': ImageConstants.PALLUM_PAZHAVUM,
+      'img': ImageConstants.KISHKINDA_KANDAM,
       'rating': '8.5',
       'votes': '586',
-      'name': 'Palum Pazhavum'
+      'name': 'Kishkindha Kaandam',
+      'D': '2D',
+      'lang': 'Malayalam',
+      'duration': '2h 5m',
+      'genre': 'Mystery, Thriller',
+      'age': 'UA',
+      'date': '12 Sep, 2024',
+      'desc':
+          "Bizarre occurrences in a monkey-inhabited village drive a newlywed couple and forest officials to seek answers behind the strange events.",
+      'thumb': ImageConstants.MD_KISHKINDA_KANDAM
     },
     {
       'img': ImageConstants.STREE2,
       'rating': '8.4',
       'votes': '18.9K',
-      'name': 'Stree 2: Sarkate Ka Aatank'
+      'name': 'Stree 2: Sarkate Ka Aatank',
+      'D': '2D',
+      'lang': 'Hindi',
+      'duration': '2h 29m',
+      'genre': 'Comedy, Horror',
+      'age': 'UA',
+      'date': '15 Aug, 2024',
+      'desc':
+          "After the events of Stree, the town of Chanderi is being haunted again. This time, women are mysteriously abducted by a terrifying headless entity. Once again, it`s up to Bicky and his friends to save their town and loved ones.",
+      'thumb': ImageConstants.MD_STREE2
     },
     {
       'img': ImageConstants.SURYAS_SATURDAY,
       'rating': '8.5',
       'votes': '8.4K',
-      'name': "Surya's Saturday"
+      'name': "Surya's Saturday",
+      'D': '2D',
+      'lang': 'Tamil, Malayalam, Hindi',
+      'duration': '2h 50m',
+      'genre': 'Action, Drama',
+      'age': 'UA',
+      'date': '29 Aug, 2024',
+      'desc':
+          'Prepare for a Massive Storm in theaters worldwide on August 29th, 2024.',
+      'thumb': ImageConstants.MD_SURYASSATURDAY
     },
     {
       'img': ImageConstants.THANGALAAN,
       'rating': '8.0',
       'votes': '12.5K',
-      'name': 'Thangalaan'
+      'name': 'Thangalaan',
+      'D': '2D',
+      'lang': 'Tamil, Malayalam, Hindi, Telugu',
+      'duration': '2h 36m',
+      'genre': 'Action, Adventure, Historical',
+      'age': 'UA',
+      'date': '15 Aug, 2024',
+      'desc':
+          "During the British Raj, a fierce tribal leader Thangalaan and his tribe assist Lord Clement, a British General, to trace gold in their village. While searching for the gold, the villagers earn the wrath of Aarathi, an apparent sorceress.",
+      'thumb': ImageConstants.MD_THANGALAAN
     },
     {
       'img': ImageConstants.VAAZHA,
       'rating': '8.9',
       'votes': '22.5K',
-      'name': 'Vaazha - Biopic of a Billion Boys'
+      'name': 'Vaazha - Biopic of a Billion Boys',
+      'D': '2D',
+      'lang': 'Malayalam',
+      'duration': '2h 5m',
+      'genre': 'Comedy, Drama',
+      'age': 'UA',
+      'date': '15 Aug, 2024',
+      'desc':
+          'Ajo, Vishnu, Moosa, and the team are labeled as `losers`. As they enter adulthood, the pressures from parents and society become overwhelming. Ultimately, love triumphs over judgement in this emotional tale of self-discovery and acceptance.',
+      'thumb': ImageConstants.MD_VAAZHA
     },
     {
       'img': ImageConstants.VAAZHAII,
       'rating': '8.7',
       'votes': '10K',
-      'name': 'Vaazhai'
+      'name': 'Vaazhai',
+      'D': '2D',
+      'lang': 'Tamil',
+      'duration': '2h 16m',
+      'genre': 'Drama',
+      'age': 'U',
+      'date': '23 Aug, 2024',
+      'desc':
+          '12-year-old Sivanaindhan lives with his mother, sister, and friend in the village of Plantain Plantations. Hoping to seek a merry life, he lugs Plantains even during school holidays. Will his hard work pay off?',
+      'thumb': ImageConstants.MD_VAAZHAII
     },
   ];
 
@@ -459,5 +549,30 @@ class Dummydb {
     },
   ];
 
-  static const List search_list = ['Movies','Sports','Plays','Activities','Events'];
+  static const List search_list = [
+    'Movies',
+    'Sports',
+    'Plays',
+    'Activities',
+    'Events'
+  ];
+
+  static const List bank_offers = [
+    {
+      'img':ImageConstants.FEDERAL_BANK,
+      'msg1':'Buy one ticket, get one ticket free',
+      'img2':'Tap to view details'
+    },
+    {
+      'img':ImageConstants.ICICI_BANK,
+      'msg1':'ICICI Bank Complimentary Ticket Offer',
+      'img2':'Tap to view details'
+    },
+    {
+      'img':ImageConstants.ICICI_BANK,
+      'msg1':'ICICI Bank Credit Card 25% Discount Offer',
+      'img2':'Tap to view details'
+    },
+    
+  ];
 }

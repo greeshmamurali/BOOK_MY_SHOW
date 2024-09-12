@@ -14,7 +14,7 @@ class movieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 323,
+      height: 330,
       child: ListView.separated(
           padding: EdgeInsets.symmetric(horizontal: 20),
           scrollDirection: Axis.horizontal,
@@ -26,7 +26,16 @@ class movieCard extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => MovieDescription(name: Dummydb.movies[index]['name']  ,
                       rating: Dummydb.movies[index]['rating'],
-                      votes: Dummydb.movies[index]['votes'],),
+                      votes: Dummydb.movies[index]['votes'],
+                      Dim: Dummydb.movies[index]['D'],
+                      lang: Dummydb.movies[index]['lang'],
+                      thumb: Dummydb.movies[index]['thumb'],
+                      duration: Dummydb.movies[index]['duration'],
+                      genre:  Dummydb.movies[index]['genre'],
+                      age: Dummydb.movies[index]['age'],
+                      date: Dummydb.movies[index]['date'],
+                      desc: Dummydb.movies[index]['desc'],),
+                      
                     ));
               },
               child: Column(
