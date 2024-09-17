@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
-import 'package:flutter_clone_book/view/movie_description/movie_description.dart';
+
 
 class eventCard extends StatelessWidget {
   const eventCard({

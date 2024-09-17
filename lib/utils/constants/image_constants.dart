@@ -66,13 +66,45 @@ class ImageConstants {
   static const String MD_GOAT = 'assets/images/md goat.jpeg';
   static const String MD_ARM = 'assets/images/md arm.jpg';
   static const String MD_BHARATHANATYM = 'assets/images/md bharathanatym.jpg';
-  static const String MD_KISHKINDA_KANDAM = 'assets/images/md kishkinda kandam.jpg';
+  static const String MD_KISHKINDA_KANDAM =
+      'assets/images/md kishkinda kandam.jpg';
   static const String MD_NUNNAKUZHI = 'assets/images/md nunnakuzhi.jpg';
   static const String MD_STREE2 = 'assets/images/md stree 2.jpg';
   static const String MD_SURYASSATURDAY = 'assets/images/md suryas sat.jpg';
   static const String MD_THANGALAAN = 'assets/images/md thangaalan.jpg';
   static const String MD_VAAZHA = 'assets/images/md vaazha.jpg';
   static const String MD_VAAZHAII = 'assets/images/md vaazhaii.jpg';
+
   static const String FEDERAL_BANK = 'assets/images/federal.png';
   static const String ICICI_BANK = 'assets/images/icicic.png';
+
+  static const String VIJAY = 'assets/images/vijay - Copy.jpg';
+  static const String YOGI_BABU = 'assets/images/yogi.jpg';
+  static const String KOKILA_MOHAN = 'assets/images/kokila.jpg';
+  static const String PRASANTH_THIAGARAJAN = 'assets/images/prashanth-thiagarajan-19312-24-03-2017-15-57-03.jpg';
+  static const String PRABHU_DEVA = 'assets/images/prabhu-deva-1050910-1695644494.jpg';
+  static const String JAYARAM = 'assets/images/jayaram-subramaniam-2924-24-03-2017-18-02-25.jpg';
+  static const String SNEHA_PRASANAN = 'assets/images/sneha-prasanna-36774-24-03-2017-16-05-10.jpg';
+  static const String VENKAT_PRABHU='assets/images/venkat-prabhu-2446-11-04-2018-01-00-16.jpg';
+  static const String KALPATHI_AGHORAM='assets/images/kalpathi-s-aghoram-iein016711-24-03-2017-15-39-04.jpg';
+  static const String KALPATHI_GANESH='assets/images/kalpathi-s-ganesh-2037895-1718266120.jpg';
+  static const String KALPATHI_SURESH='assets/images/kalpathi.-s.-suresh-iein016466-29-03-2017-17-05-10.jpg';
+
+  static const String SAIJU_KURUP='assets/images/saiju-kurup-16417-16-08-2018-11-50-48.jpg';
+  static const String SAI_KUMAR='assets/images/sai-kumar-1976-1716708065.jpg';
+  static const String SRUTHY_SURESH='assets/images/sruthy-suresh-2016386-22-01-2022-11-44-49.jpg';
+  static const String ABHIRAM_RADHAKRISHNAN='assets/images/abhiram-radhakrishnan-2020756-1722417730.jpg';
+  static const String KRISHNADAS_MURALI='assets/images/krishnadas-murali-2039113-1722417457.jpg';
+  static const String ANUPAMA_B_NAMBIAR='assets/images/anupama-b-nambiar-2039142-1722577168.jpg';
+  static const String LINI_MARIAM_DAVID='assets/images/lini-mariam-david-2039143-1722577254.jpg';
+  static const String SAMUEL_ABY='assets/images/samuel-aby-2039114-1722417543.jpg';
+
+
+  
+  static const String LOL_IN1='assets/images/lol_in1.png';
+  static const String LOL_IN2='assets/images/lol_in2.jpg';
+  static const String LOL_IN3='assets/images/lol_in3.jpg';
+  static const String LOL_IN4='assets/images/lol_in4.jpg';
+
+
 }

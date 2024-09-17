@@ -5,6 +5,7 @@ import 'package:flutter_clone_book/dummydb.dart';
 import 'package:flutter_clone_book/global_widgets/eventCard.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
+import 'package:flutter_clone_book/view/lollapalooza/lollapalooza.dart';
 import 'package:flutter_clone_book/view/search.dart/search.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -1294,40 +1295,43 @@ class _HomescreenState extends State<Homescreen> {
           ),
           SizedBox(
             height: 200,
-            child: ListView.separated(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 170,
-                        width: 310,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    Dummydb.lollapalooza[index]['img']),
-                                fit: BoxFit.cover)),
+            child: InkWell(
+              onTap: () => Navigator.push(context,MaterialPageRoute(builder:(context) => Lollapalooza(),)),
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 170,
+                          width: 310,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      Dummydb.lollapalooza[index]['img']),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          Dummydb.lollapalooza[index]['title'],
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                        )
+                      ],
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
                       ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        Dummydb.lollapalooza[index]['title'],
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
-                  );
-                },
-                separatorBuilder: (context, index) => SizedBox(
-                      width: 10,
-                    ),
-                itemCount: 4),
+                  itemCount: 4),
+            ),
           )
         ],
       ),

@@ -89,4 +89,7 @@ class ColorConstants {
 
   static const Color D_BG = Color(0xffe5e5e5);
   static const Color OFFER_BG = Color(0xfffcf1ce);
+  static const Color MUSIC_SHOW = Color(0xff292f47);
+  static const Color THUMB_UP = Color(0xff1ea73b);
+  static const Color YOU_SHOULD_KNOW = Color(0xfffdf2ec);
 }

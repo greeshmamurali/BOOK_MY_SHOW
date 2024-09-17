@@ -34,7 +34,8 @@ class movieCard extends StatelessWidget {
                       genre:  Dummydb.movies[index]['genre'],
                       age: Dummydb.movies[index]['age'],
                       date: Dummydb.movies[index]['date'],
-                      desc: Dummydb.movies[index]['desc'],),
+                      desc: Dummydb.movies[index]['desc'],
+                      selectedindex: index,),
                       
                     ));
               },
