@@ -6,6 +6,7 @@ import 'package:flutter_clone_book/global_widgets/eventCard.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
 import 'package:flutter_clone_book/view/lollapalooza/lollapalooza.dart';
+import 'package:flutter_clone_book/view/movies/movies.dart';
 import 'package:flutter_clone_book/view/search.dart/search.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -170,12 +171,19 @@ class _HomescreenState extends State<Homescreen> {
                           fontWeight: FontWeight.bold),
                     ),
                     Spacer(),
-                    Text(
-                      'See All >',
-                      style: TextStyle(
-                          color: ColorConstants.PRIMARY_COLOR,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600),
+                    GestureDetector(
+                      onTap: () => Navigator.of(context).push(
+                        PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) => Movies(),
+                         transitionsBuilder:
+                          itionAnimation,)
+                      ),
+                      child: Text(
+                        'See All >',
+                        style: TextStyle(
+                            color: ColorConstants.PRIMARY_COLOR,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600),
+                      ),
                     )
                   ],
                 ),
@@ -286,6 +294,23 @@ class _HomescreenState extends State<Homescreen> {
       ),
     );
   }
+
+ 
+
+  Widget itionAnimation(context, animation, secondaryAnimation, child) {
+                      var begin = Offset(1.0, 0.0);
+                      var end = Offset.zero;
+                      var curve = Curves.ease;
+  
+                      var tween = Tween(begin: begin, end: end)
+                          .chain(CurveTween(curve: curve));
+                      var offsetAnimation = animation.drive(tween);
+  
+                      return SlideTransition(
+                        position: offsetAnimation,
+                        child: child,
+                      );
+                    }
 
   Column yourMusicStudio() {
     return Column(
@@ -1296,7 +1321,11 @@ class _HomescreenState extends State<Homescreen> {
           SizedBox(
             height: 200,
             child: InkWell(
-              onTap: () => Navigator.push(context,MaterialPageRoute(builder:(context) => Lollapalooza(),)),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Lollapalooza(),
+                  )),
               child: ListView.separated(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   scrollDirection: Axis.horizontal,

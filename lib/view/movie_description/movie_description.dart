@@ -5,8 +5,9 @@ import 'package:flutter_clone_book/view/video_screen/video_screen.dart';
 
 class MovieDescription extends StatefulWidget {
   String name;
-  String rating;
-  String votes;
+  String? rating;
+  String? votes;
+  String? likes;
   String Dim;
   String lang;
   String duration;
@@ -16,12 +17,14 @@ class MovieDescription extends StatefulWidget {
   String desc;
   String thumb;
   var selectedindex;
+  bool comingSoon;
 
   MovieDescription(
       {super.key,
       required this.name,
-      required this.rating,
-      required this.votes,
+       this.rating,
+       this.votes,
+       this.likes,
       required this.lang,
       required this.thumb,
       required this.duration,
@@ -30,7 +33,8 @@ class MovieDescription extends StatefulWidget {
       required this.date,
       required this.desc,
       required this.selectedindex,
-      required this.Dim});
+      required this.Dim,
+      required this.comingSoon});
 
   @override
   State<MovieDescription> createState() => _MovieDescriptionState();
@@ -836,7 +840,6 @@ class _MovieDescriptionState extends State<MovieDescription> {
               );
             },
           )
-         
         ],
       ),
     );
@@ -952,7 +955,71 @@ class _MovieDescriptionState extends State<MovieDescription> {
   }
 
   Container ratingContainer() {
-    return Container(
+    return widget.comingSoon?
+    Container(
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      width: double.infinity,
+      height: 70,
+      decoration: BoxDecoration(
+          color: ColorConstants.VOTES_COLOR.withOpacity(.2),
+          borderRadius: BorderRadius.circular(7)),
+      child: Container(
+        width: MediaQuery.of(context).size.width*.7,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Icon(Icons.thumb_up, color: ColorConstants.THUMB_UP,size: 15,),
+            SizedBox(
+              width: 3,
+            ),
+           RichText(
+            maxLines: 3,
+            text: TextSpan(
+            text: widget.likes,
+            style: TextStyle(
+              color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17
+            ),
+            children: <TextSpan> [
+              TextSpan(
+                text: ' are interested\nMark interested to know when\nbookings open',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13,fontWeight: FontWeight.normal
+                )
+              )
+            ]
+           )),
+            Spacer(),
+            
+            Container(
+                            height: 23,
+                            padding: EdgeInsets.symmetric(horizontal: 6),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6),
+                                border: Border.all(
+                                    width: 1,
+                                    color: ColorConstants.PRIMARY_COLOR)),
+                            child: Center(
+                              child: Text(
+                                'Interested?',
+                                style: TextStyle(
+                                    color: ColorConstants.PRIMARY_COLOR,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          )
+          ],
+        ),
+      ),
+    ):
+
+
+
+
+    Container(
       padding: EdgeInsets.all(20),
       margin: EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,

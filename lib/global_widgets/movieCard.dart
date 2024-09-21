@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
+import 'package:flutter_clone_book/global_widgets/movie.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/view/movie_description/movie_description.dart';
+import 'package:flutter_clone_book/view/movies/movies.dart';
 
 class movieCard extends StatelessWidget {
   const movieCard({
@@ -35,7 +37,8 @@ class movieCard extends StatelessWidget {
                       age: Dummydb.movies[index]['age'],
                       date: Dummydb.movies[index]['date'],
                       desc: Dummydb.movies[index]['desc'],
-                      selectedindex: index,),
+                      selectedindex: index,
+                      comingSoon: false,),
                       
                     ));
               },
@@ -123,7 +126,7 @@ class movieCard extends StatelessWidget {
           separatorBuilder: (context, index) => SizedBox(
                 width: 10,
               ),
-          itemCount: movies.length),
+          itemCount: 7),
     );
   }
 }

@@ -107,4 +107,16 @@ class ImageConstants {
   static const String LOL_IN4='assets/images/lol_in4.jpg';
 
 
+  static const String DEVARA='assets/images/devara.jpg';
+  static const String VENOM='assets/images/venom.jpg';
+  static const String KANGUVA='assets/images/kanguva.jpg';
+  static const String BHOOL='assets/images/bhool.jpg';
+  static const String LUCKY='assets/images/lucky.jpg';
+  static const String OBBATU='assets/images/obbatu.jpg';
+  static const String MARTIN='assets/images/martin.jpg';
+  
+
+
+
+
 }

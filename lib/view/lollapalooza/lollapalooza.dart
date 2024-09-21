@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 
 class Lollapalooza extends StatefulWidget {
   const Lollapalooza({super.key});
@@ -23,8 +23,10 @@ class _LollapaloozaState extends State<Lollapalooza> {
 
   ScrollController scrollController = ScrollController();
 
+  bool showFirst = true;
+  bool isInterested = true;
   String str =
-      "The error you're encountering is due to the fact that the flutter_google_maps_webservices package version you're using does not have a direct file named geocoding.dart. This issue may arise from how the package is imported or its API structure.";
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
 
   void initState() {
     super.initState();
@@ -95,9 +97,15 @@ class _LollapaloozaState extends State<Lollapalooza> {
                               color: Colors.white,
                               size: 35,
                             )),
-                        Icon(
-                          Icons.share,
-                          color: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            Share.share(
+                                'Check out this awesome website: https://example.com');
+                          },
+                          child: Icon(
+                            Icons.share,
+                            color: Colors.white,
+                          ),
                         )
                       ],
                     ),
@@ -152,72 +160,161 @@ class _LollapaloozaState extends State<Lollapalooza> {
             SizedBox(
               height: 15,
             ),
-            Container(
-              height: 80,
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-              decoration: BoxDecoration(
-                  color: ColorConstants.VOTES_COLOR.withOpacity(.2),
-                  borderRadius: BorderRadius.circular(7)),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.thumb_up,
-                            color: ColorConstants.THUMB_UP,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            '8.0k are interested',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Mark interested to know about this event',
-                        maxLines: 2,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 13,
-                        ),
-                      )
-                    ],
-                  ),
-                  Spacer(),
-                  Container(
-                    height: 23,
-                    padding: EdgeInsets.symmetric(horizontal: 6),
+
+            AnimatedCrossFade(
+                firstChild: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isInterested = !isInterested;
+                    });
+                  },
+                  child: Container(
+                    height: 80,
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 15),
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                            width: 1, color: ColorConstants.PRIMARY_COLOR)),
-                    child: Center(
-                      child: Text(
-                        'Interested?',
-                        style: TextStyle(
-                            color: ColorConstants.PRIMARY_COLOR,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold),
-                      ),
+                        color: ColorConstants.VOTES_COLOR.withOpacity(.2),
+                        borderRadius: BorderRadius.circular(7)),
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.thumb_up,
+                                  color: ColorConstants.THUMB_UP,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  '8.0k are interested',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'Mark interested to know about this event',
+                              maxLines: 2,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 13,
+                              ),
+                            )
+                          ],
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 23,
+                          padding: EdgeInsets.symmetric(horizontal: 6),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(
+                                  width: 1,
+                                  color: ColorConstants.PRIMARY_COLOR)),
+                          child: Center(
+                            child: Text(
+                              'Interested?',
+                              style: TextStyle(
+                                  color: ColorConstants.PRIMARY_COLOR,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                  )
-                ],
-              ),
-            ),
+                  ),
+                ),
+                secondChild: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isInterested = !isInterested;
+                    });
+                  },
+                  child: Container(
+                    height: 80,
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 15),
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                    decoration: BoxDecoration(
+                        color: ColorConstants.VOTES_COLOR.withOpacity(.2),
+                        borderRadius: BorderRadius.circular(7)),
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.thumb_up,
+                                  color: ColorConstants.THUMB_UP,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  'You & 8.0k are interested',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "We'll update you with all details about this event",
+                              maxLines: 2,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 13,
+                              ),
+                            )
+                          ],
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 23,
+                          padding: EdgeInsets.symmetric(horizontal: 6),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(
+                                  width: 1,
+                                  color: ColorConstants.PRIMARY_COLOR)),
+                          child: Center(
+                            child: Text(
+                              'Undo',
+                              style: TextStyle(
+                                  color: ColorConstants.PRIMARY_COLOR,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                crossFadeState: isInterested
+                    ? CrossFadeState.showFirst
+                    : CrossFadeState.showSecond,
+                duration: Duration(milliseconds: 2)),
+
             SizedBox(
               height: 10,
             ),
@@ -485,7 +582,6 @@ class _LollapaloozaState extends State<Lollapalooza> {
 
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-              height: 200,
               color: ColorConstants.VOTES_COLOR.withOpacity(.2),
               child: Column(
                 children: [
@@ -494,7 +590,7 @@ class _LollapaloozaState extends State<Lollapalooza> {
                     height: 125,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: ColorConstants.YOU_SHOULD_KNOW.withOpacity(.5),
+                      color: const Color.fromARGB(255, 255, 237, 228),
                     ),
                     child: Row(
                       children: [
@@ -861,13 +957,509 @@ class _LollapaloozaState extends State<Lollapalooza> {
                         )
                       ],
                     ),
-                  )
+                  ),
+
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  //Ticket Inclusions Section
+                  AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showFirst = !showFirst;
+                          });
+                        },
+                        child: Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.red.withOpacity(
+                                    0.5), // Reduce opacity to make shadow softer
+                                blurRadius:
+                                    15, // Larger blur for a more prominent shadow
+                                spreadRadius:
+                                    5, // Slight spread to extend the shadow outward
+                                offset: Offset(0, 10), // Shadow at the bottom
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Ticket Inclusions',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 16),
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.keyboard_arrow_down,
+                                color: Colors.black,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showFirst = !showFirst;
+                          });
+                        },
+                        child: Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 3,
+                                    spreadRadius: 3,
+                                    offset: Offset(-2, 0))
+                              ],
+                              color: Colors.white),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Ticket Inclusions',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 16),
+                                  ),
+                                  Spacer(),
+                                  Icon(
+                                    Icons.keyboard_arrow_up,
+                                    color: Colors.black,
+                                  )
+                                ],
+                              ),
+                              Divider(
+                                height: 1,
+                                color:
+                                    ColorConstants.GREY_COLOR.withOpacity(.2),
+                              ),
+                              Container(
+                                width: double.infinity,
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Image.asset(
+                                      ImageConstants.LOL_IN1,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Image.asset(
+                                      ImageConstants.LOL_IN2,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Image.asset(
+                                      ImageConstants.LOL_IN3,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Image.asset(
+                                      ImageConstants.LOL_IN4,
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      crossFadeState: showFirst
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 2)),
+
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  //Frequently Asked Questions
+
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(15))),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                              height: MediaQuery.of(context).size.height * .8,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 15.0, vertical: 15),
+                                        child: Text(
+                                          'Frequently Asked Questions',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 5.0),
+                                        child: GestureDetector(
+                                          onTap: () => Navigator.pop(context),
+                                          child: CircleAvatar(
+                                            radius: 12,
+                                            backgroundColor: ColorConstants
+                                                .SEC4_GREY_COLOR
+                                                .withOpacity(.2),
+                                            child: Center(
+                                                child: Icon(
+                                              Icons.close,
+                                              color: Colors.black,
+                                              size: 17,
+                                            )),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Divider(
+                                    height: 1,
+                                    color: ColorConstants.SEC4_GREY_COLOR
+                                        .withOpacity(.2),
+                                  ),
+                                  Expanded(
+                                    child: ListView.separated(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10, vertical: 13),
+                                        itemBuilder: (context, index) {
+                                          return Container(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  Dummydb.frequently_asked[
+                                                      index]['quest'],
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Text(
+                                                  Dummydb.frequently_asked[
+                                                      index]['ans'],
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      //fontWeight: FontWeight.bold,
+                                                      fontSize: 16),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                        separatorBuilder: (context, index) =>
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                        itemCount:
+                                            Dummydb.frequently_asked.length),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () => Navigator.pop(context),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey,
+                                              spreadRadius: 2,
+                                              blurRadius: 3,
+                                              offset: Offset(0, -3)),
+                                        ],
+                                        color: Colors.white,
+                                      ),
+                                      // padding: EdgeInsets
+                                      //     .symmetric(
+                                      //         horizontal: 15,
+                                      //         vertical: 13),
+                                      height: 60,
+                                      width: double.infinity,
+
+                                      child: Container(
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 15, vertical: 10),
+                                        decoration: BoxDecoration(
+                                            color: ColorConstants.PRIMARY_COLOR,
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                        child: Center(
+                                          child: Text(
+                                            'Okay, Got It',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Frequetly Asked Questions',
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Spacer(),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  //Terms and Conditions
+
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(15))),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                              height: MediaQuery.of(context).size.height * .8,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 15.0, vertical: 15),
+                                        child: Text(
+                                          'Terms & Conditions',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 5.0),
+                                        child: GestureDetector(
+                                          onTap: () => Navigator.pop(context),
+                                          child: CircleAvatar(
+                                            radius: 12,
+                                            backgroundColor: ColorConstants
+                                                .SEC4_GREY_COLOR
+                                                .withOpacity(.2),
+                                            child: Center(
+                                                child: Icon(
+                                              Icons.close,
+                                              color: Colors.black,
+                                              size: 17,
+                                            )),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Divider(
+                                    height: 1,
+                                    color: ColorConstants.SEC4_GREY_COLOR
+                                        .withOpacity(.2),
+                                  ),
+                                  Expanded(
+                                    child: ListView.separated(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10, vertical: 13),
+                                        itemBuilder: (context, index) {
+                                          return Container(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 0.0),
+                                                      child: Text(
+                                                        '•',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontSize: 20),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Expanded(
+                                                      child: Text(
+                                                        Dummydb.terms[index]
+                                                            ['term'],
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontSize: 17),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                        separatorBuilder: (context, index) =>
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                        itemCount: Dummydb.terms.length),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () => Navigator.pop(context),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey,
+                                              spreadRadius: 2,
+                                              blurRadius: 3,
+                                              offset: Offset(0, -3)),
+                                        ],
+                                        color: Colors.white,
+                                      ),
+                                      // padding: EdgeInsets
+                                      //     .symmetric(
+                                      //         horizontal: 15,
+                                      //         vertical: 13),
+                                      height: 60,
+                                      width: double.infinity,
+
+                                      child: Container(
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 15, vertical: 10),
+                                        decoration: BoxDecoration(
+                                            color: ColorConstants.PRIMARY_COLOR,
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                        child: Center(
+                                          child: Text(
+                                            'Okay, Got It',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Terms & Conditions',
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Spacer(),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
 
-            
-            DropdownButton<String> (items: , onChanged: onChanged)
+            SizedBox(height: 20,),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Text('You May Also Like',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 22
+              ),),
+            ),
+
+            SizedBox(height: 1,),
+
+
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Text('Events around you, book now',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 14
+              ),),
+            )
           ],
         ),
       ),

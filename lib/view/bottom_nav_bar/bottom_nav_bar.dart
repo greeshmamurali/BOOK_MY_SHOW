@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
 import 'package:flutter_clone_book/view/homescreen/homescreen.dart';
+import 'package:flutter_clone_book/view/movies/movies.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -14,9 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentindex = 0;
   List screens = [
     Homescreen(),
-    Container(
-      color: Colors.pink,
-    ),
+   Movies(),
     Container(
       color: Colors.brown,
     ),

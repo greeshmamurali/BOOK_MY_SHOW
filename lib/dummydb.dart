@@ -1446,10 +1446,585 @@ class Dummydb {
     },
   ];
 
-  static const List<String> lol_in = [
+  static const List lol_in = [
     ImageConstants.LOL_IN1,
     ImageConstants.LOL_IN2,
     ImageConstants.LOL_IN3,
     ImageConstants.LOL_IN4,
+  ];
+
+  static const List frequently_asked = [
+    {
+      'quest': 'When is the event taking place?',
+      'ans':
+          'Lolla India will return for its third edition on March 8-9, 2025 at Mumbai'
+    },
+    {
+      'quest': 'Where will Lollapalooza 2025 be held?',
+      'ans':
+          'The event will be held in Mumbai, India, at the Mahalaxmi Race Course.'
+    },
+    {
+      'quest': 'How can I purchase tickets for Lollapalooza 2025?',
+      'ans':
+          'Tickets will be available online through the official Lollapalooza website and authorized ticketing partners.'
+    },
+    {
+      'quest': 'What are the main headliners for Lollapalooza 2025?',
+      'ans':
+          'The headliners for Lollapalooza 2025 will be announced closer to the event, featuring both international and local artists.'
+    },
+    {
+      'quest': 'Will there be any COVID-19 restrictions or guidelines?',
+      'ans':
+          'As of now, no specific restrictions have been announced. Attendees are encouraged to check the official site for the latest health guidelines closer to the event.'
+    },
+    {
+      'quest':
+          'Are there any age restrictions for attending Lollapalooza 2025?',
+      'ans':
+          'Lollapalooza is open to all ages, but attendees under 18 must be accompanied by an adult.'
+    }
+  ];
+
+  static const List terms = [
+    {
+      'term':
+          'Tickets purchased for Lollapalooza 2025 are non-transferable and must be used by the person whose name is on the ticket. Unauthorized resale or transfer of tickets is prohibited. Entry to the event requires a valid ticket and compliance with all event rules and security checks. The event organizers reserve the right to refuse entry to anyone who does not meet these criteria.'
+    },
+    {
+      'term':
+          'Attendees are expected to behave respectfully towards others, including fellow attendees, staff, and performers. Aggressive behavior, violence, harassment, or any form of discrimination will not be tolerated and may result in immediate removal from the event. Such behavior may also lead to legal action if necessary.'
+    },
+    {
+      'term':
+          'The following items are strictly prohibited at the event: weapons, illegal drugs, outside food and beverages (except for medical reasons), professional cameras and video recording equipment, and any flammable materials. Attendees found in possession of prohibited items will be removed from the event, and the items will be confiscated.'
+    },
+    {
+      'term':
+          'Attendees must adhere to all health and safety regulations in place, including any COVID-19-related protocols. Failure to comply with these regulations may result in removal from the event. Attendees are responsible for their own health and safety and should take necessary precautions based on their personal health conditions.'
+    },
+    {
+      'term':
+          'The event organizers reserve the right to modify the event schedule, lineup, or other aspects without prior notice. In case of event cancellation due to unforeseen circumstances, such as severe weather or governmental restrictions, refunds will be processed according to the organizers’ policy. No refunds will be issued for changes to the event lineup or schedule.'
+    }
+  ];
+
+  static const List movie_lang = [
+    'Malayalam',
+    'English',
+    'Hindi',
+    'Tamil',
+  ];
+
+  static const List upcoming_movies = [
+    {
+      'img':ImageConstants.DEVARA,
+      'likes':'453.8K',
+      'name':"Devara - Part 1",
+      'D':'2D',
+      'lang':'Malayalam, Telugu, Hindi, Tamil, Kannada',
+      'duration':'2h 57m',
+      'genre':'Action/Drama/Thriller',
+      'age':'UA',
+      'date':'27 Sep,2024',
+      'desc':"The film`s backdrop is centered around the far and forgotten coastal lands of India.The people,or rather the villains,in the film neither fear death nor god and there is no sense of humanity among them. Devara changes this scenario in his inimitable style.",
+      'thumb':ImageConstants.DEVARA,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+           'count': '10',
+      'trailer_lang': [
+        'తెలుగు',
+        'हिन्दी',  'ಕನ್ನಡ','தமிழ்', 'മലയാളം'
+      ],
+      'trailer': [ 'https://youtu.be/5cx7rvMvAWo',
+      'https://youtu.be/rc61YHl1PFY',
+      'https://youtu.be/NcCYq3bvlJM','https://youtu.be/J1g-8hBwj3I',
+      'https://youtu.be/FUGcRzAFAD8','https://youtu.be/0aCqlN9IbC4',
+      'https://youtu.be/f3Tz-oGl52o','https://youtu.be/WTcSeqf555c',
+      'https://youtu.be/byEjl2kJGK0','https://youtu.be/qB7kO-Z-zjU'
+      ]
+    },
+    {
+      'img':ImageConstants.MARTIN,
+      'likes':'232.6K',
+      'name':"Martin",
+      'D':'2D',
+      'lang':'Malayalam, Telugu, Hindi, Tamil, Kannada',
+      'duration':'',
+      'genre':'Action/Drama/Thriller',
+      'age':'UA',
+      'date':'11 Oct, 2024',
+      'desc':"Martin is a pulse pounding edge of the seat action thriller. A character whose dramatic journey takes him to the length and breadth of the country to fight against evil forces lurking to destroy India. But he is also in love with a beautiful lass. His journey is of discovering himself, finding love and fighting for his motherland. Can he hold the fort on all three gates?",
+      'thumb':ImageConstants.MARTIN,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+          'count': '',
+      'trailer_lang': [
+        'Kannada'
+      ],
+      'trailer': [ 'https://youtu.be/fqLCas2sWW0']
+    },
+    {
+      'img':ImageConstants.VENOM,
+      'likes':'84.1K',
+      'name':"Venom: The Last Dance",
+      'D':'2D',
+      'lang':'English, Telugu, Hindi, Tamil',
+      'duration':'',
+      'genre':'Action/Adventure/Sci-Fi',
+      'age':'',
+      'date':'25 Oct, 2024',
+      'desc':"Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie`s last dance.",
+      'thumb':ImageConstants.VENOM,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+          'count': '8',
+      'trailer_lang': [
+        'Others',
+        'हिन्दी',
+        'தமிழ்',
+        'తెలుగు'
+      ],
+      'trailer': [ 'https://youtu.be/8cAkGmzUqOY','https://youtu.be/MbIoY50ZOxg','https://youtu.be/idqfhoa4qu4','https://youtu.be/VWB8RM9qHPg','https://youtu.be/2f0JZT_xwW4','https://youtu.be/jbkxueTk3CA','https://youtu.be/nHPz7tYgoy0','https://youtu.be/ycjaN1-IVM4']
+    },
+    {
+      'img':ImageConstants.KANGUVA,
+      'likes':'71.1K',
+      'name':"Kanguva",
+      'D':'2D',
+      'lang':'Tamil',
+      'duration':'',
+      'genre':'Action/Adventure/Fantasy/Period',
+      'age':'',
+      'date':'Nov, 2024',
+      'desc':"Prepare to witness, epic emotions, raw rage, primal courage, ruthless revenge in its purest form.",
+      'thumb':ImageConstants.KANGUVA,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+         'count': '3',
+      'trailer_lang': [
+        'தமிழ்'
+      ],
+      'trailer': [ 'https://youtu.be/ajnCMSC4VPo',
+      'https://youtu.be/ByCDEmNig7Q','https://youtu.be/QYveXoqd-zY']
+    },
+    {
+      'img':ImageConstants.BHOOL,
+      'likes':'34.2K',
+      'name':"Bhool Bhulaiyaa 3",
+      'D':'2D',
+      'lang':'Hindi',
+      'duration':'',
+      'genre':'Comedy/Horror',
+      'age':'',
+      'date':'1 Nov, 2024',
+      'desc':"Gear up to tickle your funny bones with some thrill. The gates of `haveli` will now open again for Bhool Bhulaiyaa 3!.",
+      'thumb':ImageConstants.BHOOL,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+       'count': '',
+      'trailer_lang': [
+        'Hindi'
+      ],
+      'trailer': [ 'https://youtu.be/LWevIKJVDDk']
+    },
+    {
+      'img':ImageConstants.LUCKY,
+      'likes':'13.7K',
+      'name':"Lucky Baskar",
+      'D':'2D',
+      'lang':'Hindi, Malayalam, Tamil, Telugu',
+      'duration':'',
+      'genre':'Drama',
+      'age':'',
+      'date':'1 Nov, 2024',
+      'desc':"Gear up to witness the extra -ordinary tale of Lucky Bhaskar..",
+      'thumb':ImageConstants.LUCKY,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+      'count': '',
+      'trailer_lang': ['Malayalam'],
+      'trailer': [
+        'https://youtu.be/74qadvgn3V0',
+       
+      ]
+    },
+    {
+      'img':ImageConstants.OBBATU,
+      'likes':'1K',
+      'name':"Obbattu",
+      'D':'2D',
+      'lang':'Kannada',
+      'duration':'1h 51m',
+      'genre':'Suspense',
+      'age':'',
+      'date':'25 Oct, 2024',
+      'desc':"The story revolves around a woman named Ganga, who loves Shiva and wants to marry him. One day, Ganga invites Shiva to her home to serve him the sweet dish Obbattu, but Seena an uninvited guest who constantly pursues her arrives instead. Seena gets hiccups, and Ganga goes to get water. Meanwhile, Shiva arrives and plays a prank on Seena. When Ganga returns, they find Seena dead. Unaware of the real conspiracy behind his death, both Ganga and Shiva blame themselves. The story unfolds with suspense, confusion, and comedy as they try to hide the body and uncover the real reason behind his death.",
+      'thumb':ImageConstants.OBBATU,
+
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
+      'count': '',
+      'trailer_lang': [],
+      'trailer': [ ]
+    },
+
   ];
 }
