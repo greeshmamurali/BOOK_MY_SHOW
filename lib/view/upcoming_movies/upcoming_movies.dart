@@ -195,6 +195,7 @@ class _UpcomingMoviesState extends State<UpcomingMovies> {
                       age: Dummydb.upcoming_movies[index]['age'],
                       date: Dummydb.upcoming_movies[index]['date'],
                       desc: Dummydb.upcoming_movies[index]['desc'],
+                      img: Dummydb.upcoming_movies[index]['img'],
                       selectedindex: index,
                       comingSoon: true,),
                       transitionsBuilder:transitionAnimation,)
@@ -203,6 +204,7 @@ class _UpcomingMoviesState extends State<UpcomingMovies> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        
                         Container(
                           width: 150,
                           height: 243,

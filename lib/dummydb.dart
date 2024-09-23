@@ -21,7 +21,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Manish',
-          'rating': '9/10',
+          'rating': '9',
           'hashtags': '#SuperDirection #AwesomeStory',
           'desc':
               '"Goat" is a blockbuster that brings out the best of Vijay\'s acting prowess! The film is a perfect blend of action, emotion, and drama, with Vijay delivering a power-packed performance that keeps the audience on the edge of their seats. The storyline, which revolves around an underdog rising to become the "Greatest of All Time," is inspiring and engaging. The direction is tight, the music is electrifying, and the dialogues are whistle-worthy. If you\'re a fan of Vijay, this film is an absolute treat!',
@@ -29,7 +29,7 @@ class Dummydb {
         },
         {
           'name': 'Sanjana',
-          'rating': '7/10',
+          'rating': '7',
           'hashtags': '#Entertaining #PredictablePlot',
           'desc':
               '"Goat" is a decent film with plenty of entertainment, especially for Vijay fans. While the first half is gripping with some great action sequences and a powerful performance by Vijay, the second half becomes a bit predictable. The film could have used some unique twists to elevate the story. Nonetheless, it’s a great watch for a fun movie night, but don’t expect anything groundbreaking.',
@@ -37,7 +37,7 @@ class Dummydb {
         },
         {
           'name': 'Arjun',
-          'rating': '6/10',
+          'rating': '6',
           'hashtags': '#VijayRocks #SameOldStory',
           'desc':
               'As much as I love Vijay’s acting, "Goat" didn’t quite meet my expectations. The film felt like a rehash of several other underdog stories without adding anything new to the genre. Vijay’s performance is the saving grace, but the script needed more depth and originality. The cinematography and action choreography are on point, but I hoped for a more compelling narrative.',
@@ -45,7 +45,7 @@ class Dummydb {
         },
         {
           'name': 'Priya',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#MustWatch #VijayFan #EmotionalJourney',
           'desc': 'Awesome Film',
           'date': '2024-09-01', // Example date
@@ -129,7 +129,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Anjali',
-          'rating': '9/10',
+          'rating': '9',
           'hashtags': '#Mesmerizing #CulturalEpic #MustWatch',
           'desc':
               '"Bharathanatyam" is a beautiful tribute to the classical dance form. The film brilliantly captures the essence of Indian culture and the dedication of a dancer’s life. The lead actress delivers an outstanding performance that brings both grace and emotion to the screen. The cinematography is breathtaking, and the music is soul-stirring. A must-watch for lovers of dance and Indian culture!',
@@ -137,7 +137,7 @@ class Dummydb {
         },
         {
           'name': 'Ravi',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#VisualTreat #GreatPerformance',
           'desc':
               '"Bharathanatyam" is a visual treat! The film takes you on a journey through the rich history and discipline of the classical dance form. The storyline is engaging, though it moves at a slow pace at times. The performances are top-notch, especially the lead actress who truly embodies her character. Overall, it’s an impressive film that stays true to its cultural roots.',
@@ -145,7 +145,7 @@ class Dummydb {
         },
         {
           'name': 'Meera',
-          'rating': '7/10',
+          'rating': '7',
           'hashtags': '#CulturalJourney #SlowPaced',
           'desc':
               '"Bharathanatyam" is a well-crafted film that captures the struggles and triumphs of a dedicated dancer. While the film is visually stunning and culturally rich, it tends to drag in the middle portions. The narrative could have been tighter to maintain the momentum. However, the performances and choreography make it worth watching, especially for those interested in the art form.',
@@ -153,7 +153,7 @@ class Dummydb {
         },
         {
           'name': 'Ajay',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#Artistic #InspiringStory #GreatDirection',
           'desc':
               '"Bharathanatyam" stands out for its artistic approach and inspiring storyline. The film beautifully portrays the passion and sacrifices involved in pursuing classical dance. The director has done an excellent job in capturing the nuances of the dance and the emotions of the characters. The supporting cast also adds depth to the narrative. A compelling watch that inspires and entertains.',
@@ -221,7 +221,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Krishna',
-          'rating': '9.5/10',
+          'rating': '9.5',
           'hashtags': '#ThrillingExperience #Masterpiece #MustWatch',
           'desc':
               '"A.R.M" is a brilliantly crafted thriller that keeps you on the edge of your seat from start to finish. The plot is filled with unexpected twists and turns that are both thrilling and engaging. The lead actor delivers a powerful performance, supported by a strong ensemble cast. The direction is crisp, and the cinematography is visually striking, making it one of the best Malayalam films of the year. A must-watch for fans of intense thrillers!',
@@ -229,7 +229,7 @@ class Dummydb {
         },
         {
           'name': 'Sreekanth',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#GrippingStoryline #StrongPerformance',
           'desc':
               '"A.R.M" offers a gripping storyline that unfolds with great suspense and drama. The narrative is well-paced, and the suspense is maintained throughout the film. The lead actor’s portrayal of a complex character is commendable, and the background score enhances the intensity of the scenes. While the film excels in many areas, some portions feel a bit stretched. Nevertheless, it’s a solid watch for thriller enthusiasts.',
@@ -237,7 +237,7 @@ class Dummydb {
         },
         {
           'name': 'Nandini',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#IntriguingPlot #CouldBeBetter',
           'desc':
               '"A.R.M" has an intriguing plot that draws you in, but it could have been executed better. The story has potential with its strong premise and unexpected twists, but the pacing feels uneven in some parts. The performances are strong, especially the supporting cast, who bring depth to the film. It’s a good attempt at a thriller, but with some room for improvement in storytelling.',
@@ -245,7 +245,7 @@ class Dummydb {
         },
         {
           'name': 'Vikram',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#EdgeOfTheSeat #GreatDirection #WellExecuted',
           'desc':
               '"A.R.M" is a well-executed thriller that combines great direction with stellar performances. The film succeeds in creating a tense atmosphere that keeps the audience hooked throughout. The plot twists are cleverly placed, and the climax is both satisfying and thought-provoking. The director has done a fantastic job of keeping the suspense alive. A must-watch for those who love a good psychological thriller!',
@@ -336,7 +336,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Anitha',
-          'rating': '9/10',
+          'rating': '9',
           'hashtags': '#HeartfeltDrama #BrilliantActing #MustWatch',
           'desc':
               '"Nunnakuzhi" is a deeply moving film that captures the essence of life in a small village with authenticity and grace. The film is carried by outstanding performances from its lead actors, who bring their characters to life with remarkable depth. The storyline is simple yet powerful, focusing on human emotions, relationships, and the challenges of rural life. The direction is sensitive and nuanced, making it a must-watch for those who appreciate meaningful cinema.',
@@ -344,7 +344,7 @@ class Dummydb {
         },
         {
           'name': 'Rahul',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#RealisticPortrayal #BeautifulCinematography',
           'desc':
               '"Nunnakuzhi" is a beautifully shot film that takes you on a journey through the lives of its characters in a small village setting. The cinematography captures the rustic beauty of rural Kerala, and the narrative unfolds with a natural flow. While the film is a bit slow-paced, it compensates with its strong character development and realistic portrayal of village life. A great watch for those who enjoy films rooted in realism.',
@@ -352,7 +352,7 @@ class Dummydb {
         },
         {
           'name': 'Divya',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#EmotionalStory #SlowPaced',
           'desc':
               '"Nunnakuzhi" tells an emotional story that tugs at your heartstrings. The film has its moments of brilliance, especially in the way it portrays the simple joys and hardships of village life. However, the pacing could have been tighter to keep the audience more engaged. Despite this, the performances and the authenticity of the setting make it worth a watch, particularly for those who enjoy a slow-burn drama.',
@@ -360,7 +360,7 @@ class Dummydb {
         },
         {
           'name': 'Ajay',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#GreatDirection #AuthenticFeel #TouchingStory',
           'desc':
               '"Nunnakuzhi" stands out for its authentic portrayal of village life and the emotional depth of its narrative. The film’s direction is top-notch, capturing the subtle nuances of rural dynamics with sensitivity. The supporting cast delivers strong performances, adding layers to the story. The film’s realistic approach and touching storyline make it a memorable experience. Highly recommended for fans of Malayalam cinema that reflects true-to-life stories.',
@@ -430,7 +430,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Suresh',
-          'rating': '9/10',
+          'rating': '9',
           'hashtags': '#EpicAdventure #CinematicMasterpiece #MustWatch',
           'desc':
               '"Kishkinda Kandam" is a cinematic masterpiece that combines breathtaking visuals with a riveting story. The film transports you to a world of adventure and mythology, delivering a grand experience. The direction is impeccable, and the performances are stellar, especially the lead actor who brings a remarkable depth to his role. The special effects and cinematography are top-notch, making it a must-watch for fans of epic adventures and mythological tales.',
@@ -438,7 +438,7 @@ class Dummydb {
         },
         {
           'name': 'Anu',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#MythologicalDrama #StrongPerformances #VisualTreat',
           'desc':
               '"Kishkinda Kandam" offers a visually stunning and engaging experience. The film’s portrayal of mythological events is both captivating and thought-provoking. The performances are strong, with standout roles that add depth to the story. While the pacing can be a bit uneven at times, the film’s rich visual and emotional appeal makes it a worthwhile watch for those interested in mythological dramas.',
@@ -446,7 +446,7 @@ class Dummydb {
         },
         {
           'name': 'Rajesh',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#AmbitiousFilm #GoodEffort #SomewhatSlow',
           'desc':
               '"Kishkinda Kandam" is an ambitious film that strives to bring ancient myths to life with grandeur. The visual effects and set designs are impressive, creating an immersive experience. However, the film’s pacing can feel slow, and some of the narrative elements could have been more tightly woven. Despite these issues, the film succeeds in delivering a compelling story and showcases some excellent performances. A good effort with room for refinement.',
@@ -454,7 +454,7 @@ class Dummydb {
         },
         {
           'name': 'Meera',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#MythologyInFilm #EngagingStory #WellDirected',
           'desc':
               '"Kishkinda Kandam" is a well-directed film that brings mythological stories to the forefront with engaging storytelling and impressive direction. The film’s attention to detail in depicting the mythological world is commendable. The lead actor delivers a powerful performance that enhances the narrative. The film may have some pacing issues, but it is overall an engaging watch that offers a fresh take on classic tales. Highly recommended for fans of mythology and epic storytelling.',
@@ -536,28 +536,28 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Aditi',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#HorrorComedy #EntertainingSequel #MustWatch',
           'desc':
               '"Stree 2" successfully continues the legacy of its predecessor with a perfect blend of horror and comedy. The film maintains the suspense and humor while introducing new twists that keep the audience engaged. The cast delivers strong performances, with standout roles adding depth to the story. The direction keeps the tension high while balancing comedic moments, making it a highly entertaining sequel that fans of the genre will enjoy.'
         },
         {
           'name': 'Ravi',
-          'rating': '7/10',
+          'rating': '7',
           'hashtags': '#FunFilm #PredictablePlot #GoodEntertainment',
           'desc':
               '"Stree 2" is a fun sequel that brings back the elements that made the first film popular. While the humor and horror elements are still enjoyable, the plot feels somewhat predictable. The performances are solid, and the film’s atmosphere successfully captures the spooky yet humorous tone. It’s an entertaining watch, though it doesn’t quite reach the highs of the original. A good film for fans of the genre, but don’t expect too many surprises.'
         },
         {
           'name': 'Meera',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#SpookyFun #GreatCast #Entertaining',
           'desc':
               '"Stree 2" delivers a delightful mix of chills and laughs. The film’s strength lies in its cast, who bring both charm and intensity to their roles. The horror-comedy genre is handled with finesse, and the screenplay keeps the audience entertained throughout. While some of the scares are a bit formulaic, the film compensates with its engaging performances and clever humor. A worthy sequel that provides a fun and spooky experience.'
         },
         {
           'name': 'Arjun',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#ComedyHorror #GoodSequel #Entertaining',
           'desc':
               '"Stree 2" is a worthy follow-up to the original, continuing the blend of comedy and horror with some fresh elements. The film is well-paced and maintains the quirky charm of its predecessor. However, the plot doesn’t break new ground and some of the jokes and scares feel recycled. Despite this, the movie is an enjoyable watch with strong performances and a few genuine laughs. Ideal for fans of the first film looking for more of the same.'
@@ -620,7 +620,7 @@ class Dummydb {
       'votes': '8.4K',
       'name': "Surya's Saturday",
       'D': '2D',
-      'lang': 'Tamil, Malayalam, Hindi',
+      'lang': 'Malayalam, Tamil, Hindi',
       'duration': '2h 50m',
       'genre': 'Action, Drama',
       'age': 'UA',
@@ -639,7 +639,7 @@ class Dummydb {
         },
         {
           'name': 'Ravi',
-          'rating': '7/10',
+          'rating': '7',
           'hashtags': '#FunFilm #PredictablePlot #GoodEntertainment',
           'desc':
               '"Stree 2" is a fun sequel that brings back the elements that made the first film popular. While the humor and horror elements are still enjoyable, the plot feels somewhat predictable. The performances are solid, and the film’s atmosphere successfully captures the spooky yet humorous tone. It’s an entertaining watch, though it doesn’t quite reach the highs of the original. A good film for fans of the genre, but don’t expect too many surprises.',
@@ -647,7 +647,7 @@ class Dummydb {
         },
         {
           'name': 'Meera',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#SpookyFun #GreatCast #Entertaining',
           'desc':
               '"Stree 2" delivers a delightful mix of chills and laughs. The film’s strength lies in its cast, who bring both charm and intensity to their roles. The horror-comedy genre is handled with finesse, and the screenplay keeps the audience entertained throughout. While some of the scares are a bit formulaic, the film compensates with its engaging performances and clever humor. A worthy sequel that provides a fun and spooky experience.',
@@ -655,7 +655,7 @@ class Dummydb {
         },
         {
           'name': 'Arjun',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#ComedyHorror #GoodSequel #Entertaining',
           'desc':
               '"Stree 2" is a worthy follow-up to the original, continuing the blend of comedy and horror with some fresh elements. The film is well-paced and maintains the quirky charm of its predecessor. However, the plot doesn’t break new ground and some of the jokes and scares feel recycled. Despite this, the movie is an enjoyable watch with strong performances and a few genuine laughs. Ideal for fans of the first film looking for more of the same.',
@@ -728,7 +728,7 @@ class Dummydb {
       'votes': '12.5K',
       'name': 'Thangalaan',
       'D': '2D',
-      'lang': 'Tamil, Malayalam, Hindi, Telugu',
+      'lang': 'Malayalam, Tamil, Hindi, Telugu',
       'duration': '2h 36m',
       'genre': 'Action, Adventure, Historical',
       'age': 'UA',
@@ -739,7 +739,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Nisha',
-          'rating': '9/10',
+          'rating': '9',
           'hashtags': '#FeelGoodFilm #SuryaShines #MustWatch',
           'desc':
               '"Surya\'s Saturday" is a heartwarming film that showcases Surya’s incredible acting range. The story, centered around a transformative Saturday in Surya’s life, is both uplifting and engaging. The film balances humor and drama effectively, and Surya’s performance is nothing short of spectacular. The direction is tight, and the supporting cast adds depth to the narrative. It’s a must-watch for those who appreciate emotionally resonant cinema and strong performances.',
@@ -747,7 +747,7 @@ class Dummydb {
         },
         {
           'name': 'Raj',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#CharmingFilm #GreatPerformance #FeelGoodFactor',
           'desc':
               '"Surya\'s Saturday" is an enjoyable film that highlights Surya’s charm and versatility as an actor. The film’s narrative is engaging, and the way it unfolds over a single day provides a unique and refreshing perspective. While the plot can be a bit predictable, the film’s overall charm and Surya’s excellent performance make it a delightful watch. It’s a great choice for a feel-good movie night.',
@@ -755,7 +755,7 @@ class Dummydb {
         },
         {
           'name': 'Deepa',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#Entertaining #StrongLead #PredictablePlot',
           'desc':
               '"Surya\'s Saturday" is a well-crafted film with a standout performance by Surya. The film’s exploration of a single day in the protagonist’s life is intriguing, and the emotional beats are well-handled. However, some of the plot twists feel predictable, and the film relies heavily on Surya’s performance to carry the story. Despite this, it’s an entertaining film with moments of genuine warmth and insight.',
@@ -763,7 +763,7 @@ class Dummydb {
         },
         {
           'name': 'Kiran',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#SuryaMagic #WellDirected #HeartfeltStory',
           'desc':
               '"Surya\'s Saturday" is a beautifully directed film that captures the essence of a transformative day in Surya’s life. The film excels in its portrayal of character development and emotional depth, with Surya delivering a compelling performance. The pacing is steady, and the narrative, though simple, is impactful. The film’s heartfelt story and Surya’s charismatic presence make it a memorable and touching experience.',
@@ -837,7 +837,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Aishwarya',
-          'rating': '9/10',
+          'rating': '9',
           'hashtags': '#Heartwarming #ExceptionalStorytelling #MustWatch',
           'desc':
               '"Vaazha" is a beautifully crafted film that touches the heart with its poignant storytelling and exceptional performances. The film explores deep emotional themes with sensitivity and grace. The lead actor’s portrayal is both moving and compelling, supported by a strong supporting cast. The direction is superb, creating a narrative that is both engaging and thought-provoking. It’s a must-watch for those who appreciate heartfelt dramas and well-executed cinema.',
@@ -845,7 +845,7 @@ class Dummydb {
         },
         {
           'name': 'Ravi',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#EmotionalJourney #StrongPerformances #WellDirected',
           'desc':
               '"Vaazha" offers an emotional journey that is both engaging and impactful. The film’s storyline, focusing on personal growth and resilience, is well-developed and resonates with the audience. The performances are strong, particularly from the lead actor, who delivers a standout performance. The direction and cinematography enhance the film’s emotional depth. While some plot elements might feel predictable, the overall execution makes it a worthwhile watch.',
@@ -853,7 +853,7 @@ class Dummydb {
         },
         {
           'name': 'Nisha',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#ThoughtProvoking #GoodPerformances #PacingIssues',
           'desc':
               '"Vaazha" is a thought-provoking film with good performances from the cast. The story delves into meaningful themes and presents a compelling narrative. However, the pacing can be uneven, and some scenes feel drawn out, which affects the film’s overall flow. Despite these issues, the film succeeds in delivering a powerful message and features strong acting, making it a good watch for those interested in emotional dramas.',
@@ -861,7 +861,7 @@ class Dummydb {
         },
         {
           'name': 'Kiran',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#HeartfeltDrama #WellActed #CinematicExperience',
           'desc':
               '"Vaazha" is a heartfelt drama that excels in both storytelling and acting. The film’s exploration of human emotions and relationships is handled with care, and the lead actor’s performance is a highlight. The direction and production values are top-notch, contributing to a rich cinematic experience. While the film may have a few slow moments, its emotional depth and strong performances make it a memorable watch for fans of dramatic cinema.',
@@ -941,7 +941,7 @@ class Dummydb {
       'reviews': [
         {
           'name': 'Sanjay',
-          'rating': '8.5/10',
+          'rating': '8.5',
           'hashtags': '#EmotionalDepth #PowerfulPerformances #MustWatch',
           'desc':
               '"Vaazhaii" is a touching film that delves deep into human emotions with exceptional storytelling and performances. The film’s narrative is both engaging and heartfelt, capturing the struggles and triumphs of its characters with sincerity. The lead actor delivers a powerful performance that anchors the film, supported by a talented cast. The direction and cinematography complement the story, making it a compelling watch. A must-see for those who appreciate emotionally resonant cinema.',
@@ -949,7 +949,7 @@ class Dummydb {
         },
         {
           'name': 'Meera',
-          'rating': '8/10',
+          'rating': '8',
           'hashtags': '#CompellingStory #GreatActing #VisualTreat',
           'desc':
               '"Vaazhaii" offers a compelling story that keeps the audience invested from start to finish. The film’s exploration of personal and social themes is both thought-provoking and engaging. The acting is top-notch, with standout performances that bring depth to the characters. The film’s visual presentation is also impressive, enhancing the overall experience. While the pace may occasionally lag, the film’s strong narrative and performances make it a worthwhile watch.',
@@ -957,7 +957,7 @@ class Dummydb {
         },
         {
           'name': 'Arjun',
-          'rating': '7.5/10',
+          'rating': '7.5',
           'hashtags': '#HeartfeltDrama #StrongLead #PacingIssues',
           'desc':
               '"Vaazhaii" is a heartfelt drama that shines through its lead actor’s performance and emotional storytelling. The film effectively captures the essence of its themes and offers moments of genuine impact. However, the pacing can be inconsistent, with some scenes feeling a bit prolonged. Despite this, the film’s emotional weight and the strength of its central performance make it a compelling watch for fans of drama.',
@@ -965,7 +965,7 @@ class Dummydb {
         },
         {
           'name': 'Rita',
-          'rating': '8.2/10',
+          'rating': '8.2',
           'hashtags': '#MovingFilm #WellCrafted #StrongCast',
           'desc':
               '"Vaazhaii" is a well-crafted film that delivers a moving story with strong performances from its cast. The film’s narrative is both engaging and emotionally resonant, providing a rich cinematic experience. The direction is solid, and the film’s attention to detail adds to its impact. While some plot developments might feel predictable, the overall execution and the cast’s performances make it a memorable and touching film.',
@@ -1519,19 +1519,19 @@ class Dummydb {
 
   static const List upcoming_movies = [
     {
-      'img':ImageConstants.DEVARA,
-      'likes':'453.8K',
-      'name':"Devara - Part 1",
-      'D':'2D',
-      'lang':'Malayalam, Telugu, Hindi, Tamil, Kannada',
-      'duration':'2h 57m',
-      'genre':'Action/Drama/Thriller',
-      'age':'UA',
-      'date':'27 Sep,2024',
-      'desc':"The film`s backdrop is centered around the far and forgotten coastal lands of India.The people,or rather the villains,in the film neither fear death nor god and there is no sense of humanity among them. Devara changes this scenario in his inimitable style.",
-      'thumb':ImageConstants.DEVARA,
-
-       'cast': [
+      'img': ImageConstants.DEVARA,
+      'likes': '453.8K',
+      'name': "Devara - Part 1",
+      'D': '2D',
+      'lang': 'Malayalam, Telugu, Hindi, Tamil, Kannada',
+      'duration': '2h 57m',
+      'genre': 'Action/Drama/Thriller',
+      'age': 'UA',
+      'date': '27 Sep,2024',
+      'desc':
+          "The film`s backdrop is centered around the far and forgotten coastal lands of India.The people,or rather the villains,in the film neither fear death nor god and there is no sense of humanity among them. Devara changes this scenario in his inimitable style.",
+      'thumb': ImageConstants.DEVARA,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -1583,33 +1583,35 @@ class Dummydb {
           'role': 'Producer'
         },
       ],
-           'count': '10',
-      'trailer_lang': [
-        'తెలుగు',
-        'हिन्दी',  'ಕನ್ನಡ','தமிழ்', 'മലയാളം'
-      ],
-      'trailer': [ 'https://youtu.be/5cx7rvMvAWo',
-      'https://youtu.be/rc61YHl1PFY',
-      'https://youtu.be/NcCYq3bvlJM','https://youtu.be/J1g-8hBwj3I',
-      'https://youtu.be/FUGcRzAFAD8','https://youtu.be/0aCqlN9IbC4',
-      'https://youtu.be/f3Tz-oGl52o','https://youtu.be/WTcSeqf555c',
-      'https://youtu.be/byEjl2kJGK0','https://youtu.be/qB7kO-Z-zjU'
+      'count': '10',
+      'trailer_lang': ['తెలుగు', 'हिन्दी', 'ಕನ್ನಡ', 'தமிழ்', 'മലയാളം'],
+      'trailer': [
+        'https://youtu.be/5cx7rvMvAWo',
+        'https://youtu.be/rc61YHl1PFY',
+        'https://youtu.be/NcCYq3bvlJM',
+        'https://youtu.be/J1g-8hBwj3I',
+        'https://youtu.be/FUGcRzAFAD8',
+        'https://youtu.be/0aCqlN9IbC4',
+        'https://youtu.be/f3Tz-oGl52o',
+        'https://youtu.be/WTcSeqf555c',
+        'https://youtu.be/byEjl2kJGK0',
+        'https://youtu.be/qB7kO-Z-zjU'
       ]
     },
     {
-      'img':ImageConstants.MARTIN,
-      'likes':'232.6K',
-      'name':"Martin",
-      'D':'2D',
-      'lang':'Malayalam, Telugu, Hindi, Tamil, Kannada',
-      'duration':'',
-      'genre':'Action/Drama/Thriller',
-      'age':'UA',
-      'date':'11 Oct, 2024',
-      'desc':"Martin is a pulse pounding edge of the seat action thriller. A character whose dramatic journey takes him to the length and breadth of the country to fight against evil forces lurking to destroy India. But he is also in love with a beautiful lass. His journey is of discovering himself, finding love and fighting for his motherland. Can he hold the fort on all three gates?",
-      'thumb':ImageConstants.MARTIN,
-
-       'cast': [
+      'img': ImageConstants.MARTIN,
+      'likes': '232.6K',
+      'name': "Martin",
+      'D': '2D',
+      'lang': 'Malayalam, Telugu, Hindi, Tamil, Kannada',
+      'duration': '',
+      'genre': 'Action/Drama/Thriller',
+      'age': 'UA',
+      'date': '11 Oct, 2024',
+      'desc':
+          "Martin is a pulse pounding edge of the seat action thriller. A character whose dramatic journey takes him to the length and breadth of the country to fight against evil forces lurking to destroy India. But he is also in love with a beautiful lass. His journey is of discovering himself, finding love and fighting for his motherland. Can he hold the fort on all three gates?",
+      'thumb': ImageConstants.MARTIN,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -1661,26 +1663,24 @@ class Dummydb {
           'role': 'Producer'
         },
       ],
-          'count': '',
-      'trailer_lang': [
-        'Kannada'
-      ],
-      'trailer': [ 'https://youtu.be/fqLCas2sWW0']
+      'count': '',
+      'trailer_lang': ['Kannada'],
+      'trailer': ['https://youtu.be/fqLCas2sWW0']
     },
     {
-      'img':ImageConstants.VENOM,
-      'likes':'84.1K',
-      'name':"Venom: The Last Dance",
-      'D':'2D',
-      'lang':'English, Telugu, Hindi, Tamil',
-      'duration':'',
-      'genre':'Action/Adventure/Sci-Fi',
-      'age':'',
-      'date':'25 Oct, 2024',
-      'desc':"Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie`s last dance.",
-      'thumb':ImageConstants.VENOM,
-
-       'cast': [
+      'img': ImageConstants.VENOM,
+      'likes': '84.1K',
+      'name': "Venom: The Last Dance",
+      'D': '2D',
+      'lang': 'English, Telugu, Hindi, Tamil',
+      'duration': '',
+      'genre': 'Action/Adventure/Sci-Fi',
+      'age': '',
+      'date': '25 Oct, 2024',
+      'desc':
+          "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie`s last dance.",
+      'thumb': ImageConstants.VENOM,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -1732,29 +1732,33 @@ class Dummydb {
           'role': 'Producer'
         },
       ],
-          'count': '8',
-      'trailer_lang': [
-        'Others',
-        'हिन्दी',
-        'தமிழ்',
-        'తెలుగు'
-      ],
-      'trailer': [ 'https://youtu.be/8cAkGmzUqOY','https://youtu.be/MbIoY50ZOxg','https://youtu.be/idqfhoa4qu4','https://youtu.be/VWB8RM9qHPg','https://youtu.be/2f0JZT_xwW4','https://youtu.be/jbkxueTk3CA','https://youtu.be/nHPz7tYgoy0','https://youtu.be/ycjaN1-IVM4']
+      'count': '8',
+      'trailer_lang': ['Others', 'हिन्दी', 'தமிழ்', 'తెలుగు'],
+      'trailer': [
+        'https://youtu.be/8cAkGmzUqOY',
+        'https://youtu.be/MbIoY50ZOxg',
+        'https://youtu.be/idqfhoa4qu4',
+        'https://youtu.be/VWB8RM9qHPg',
+        'https://youtu.be/2f0JZT_xwW4',
+        'https://youtu.be/jbkxueTk3CA',
+        'https://youtu.be/nHPz7tYgoy0',
+        'https://youtu.be/ycjaN1-IVM4'
+      ]
     },
     {
-      'img':ImageConstants.KANGUVA,
-      'likes':'71.1K',
-      'name':"Kanguva",
-      'D':'2D',
-      'lang':'Tamil',
-      'duration':'',
-      'genre':'Action/Adventure/Fantasy/Period',
-      'age':'',
-      'date':'Nov, 2024',
-      'desc':"Prepare to witness, epic emotions, raw rage, primal courage, ruthless revenge in its purest form.",
-      'thumb':ImageConstants.KANGUVA,
-
-       'cast': [
+      'img': ImageConstants.KANGUVA,
+      'likes': '71.1K',
+      'name': "Kanguva",
+      'D': '2D',
+      'lang': 'Tamil',
+      'duration': '',
+      'genre': 'Action/Adventure/Fantasy/Period',
+      'age': '',
+      'date': 'Nov, 2024',
+      'desc':
+          "Prepare to witness, epic emotions, raw rage, primal courage, ruthless revenge in its purest form.",
+      'thumb': ImageConstants.KANGUVA,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -1806,27 +1810,28 @@ class Dummydb {
           'role': 'Producer'
         },
       ],
-         'count': '3',
-      'trailer_lang': [
-        'தமிழ்'
-      ],
-      'trailer': [ 'https://youtu.be/ajnCMSC4VPo',
-      'https://youtu.be/ByCDEmNig7Q','https://youtu.be/QYveXoqd-zY']
+      'count': '3',
+      'trailer_lang': ['தமிழ்'],
+      'trailer': [
+        'https://youtu.be/ajnCMSC4VPo',
+        'https://youtu.be/ByCDEmNig7Q',
+        'https://youtu.be/QYveXoqd-zY'
+      ]
     },
     {
-      'img':ImageConstants.BHOOL,
-      'likes':'34.2K',
-      'name':"Bhool Bhulaiyaa 3",
-      'D':'2D',
-      'lang':'Hindi',
-      'duration':'',
-      'genre':'Comedy/Horror',
-      'age':'',
-      'date':'1 Nov, 2024',
-      'desc':"Gear up to tickle your funny bones with some thrill. The gates of `haveli` will now open again for Bhool Bhulaiyaa 3!.",
-      'thumb':ImageConstants.BHOOL,
-
-       'cast': [
+      'img': ImageConstants.BHOOL,
+      'likes': '34.2K',
+      'name': "Bhool Bhulaiyaa 3",
+      'D': '2D',
+      'lang': 'Hindi',
+      'duration': '',
+      'genre': 'Comedy/Horror',
+      'age': '',
+      'date': '1 Nov, 2024',
+      'desc':
+          "Gear up to tickle your funny bones with some thrill. The gates of `haveli` will now open again for Bhool Bhulaiyaa 3!.",
+      'thumb': ImageConstants.BHOOL,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -1878,26 +1883,23 @@ class Dummydb {
           'role': 'Producer'
         },
       ],
-       'count': '',
-      'trailer_lang': [
-        'Hindi'
-      ],
-      'trailer': [ 'https://youtu.be/LWevIKJVDDk']
+      'count': '',
+      'trailer_lang': ['Hindi'],
+      'trailer': ['https://youtu.be/LWevIKJVDDk']
     },
     {
-      'img':ImageConstants.LUCKY,
-      'likes':'13.7K',
-      'name':"Lucky Baskar",
-      'D':'2D',
-      'lang':'Hindi, Malayalam, Tamil, Telugu',
-      'duration':'',
-      'genre':'Drama',
-      'age':'',
-      'date':'1 Nov, 2024',
-      'desc':"Gear up to witness the extra -ordinary tale of Lucky Bhaskar..",
-      'thumb':ImageConstants.LUCKY,
-
-       'cast': [
+      'img': ImageConstants.LUCKY,
+      'likes': '13.7K',
+      'name': "Lucky Baskar",
+      'D': '2D',
+      'lang': 'Hindi, Malayalam, Tamil, Telugu',
+      'duration': '',
+      'genre': 'Drama',
+      'age': '',
+      'date': '1 Nov, 2024',
+      'desc': "Gear up to witness the extra -ordinary tale of Lucky Bhaskar..",
+      'thumb': ImageConstants.LUCKY,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -1953,23 +1955,22 @@ class Dummydb {
       'trailer_lang': ['Malayalam'],
       'trailer': [
         'https://youtu.be/74qadvgn3V0',
-       
       ]
     },
     {
-      'img':ImageConstants.OBBATU,
-      'likes':'1K',
-      'name':"Obbattu",
-      'D':'2D',
-      'lang':'Kannada',
-      'duration':'1h 51m',
-      'genre':'Suspense',
-      'age':'',
-      'date':'25 Oct, 2024',
-      'desc':"The story revolves around a woman named Ganga, who loves Shiva and wants to marry him. One day, Ganga invites Shiva to her home to serve him the sweet dish Obbattu, but Seena an uninvited guest who constantly pursues her arrives instead. Seena gets hiccups, and Ganga goes to get water. Meanwhile, Shiva arrives and plays a prank on Seena. When Ganga returns, they find Seena dead. Unaware of the real conspiracy behind his death, both Ganga and Shiva blame themselves. The story unfolds with suspense, confusion, and comedy as they try to hide the body and uncover the real reason behind his death.",
-      'thumb':ImageConstants.OBBATU,
-
-       'cast': [
+      'img': ImageConstants.OBBATU,
+      'likes': '1K',
+      'name': "Obbattu",
+      'D': '2D',
+      'lang': 'Kannada',
+      'duration': '1h 51m',
+      'genre': 'Suspense',
+      'age': '',
+      'date': '25 Oct, 2024',
+      'desc':
+          "The story revolves around a woman named Ganga, who loves Shiva and wants to marry him. One day, Ganga invites Shiva to her home to serve him the sweet dish Obbattu, but Seena an uninvited guest who constantly pursues her arrives instead. Seena gets hiccups, and Ganga goes to get water. Meanwhile, Shiva arrives and plays a prank on Seena. When Ganga returns, they find Seena dead. Unaware of the real conspiracy behind his death, both Ganga and Shiva blame themselves. The story unfolds with suspense, confusion, and comedy as they try to hide the body and uncover the real reason behind his death.",
+      'thumb': ImageConstants.OBBATU,
+      'cast': [
         {
           'img': ImageConstants.VIJAY,
           'name': 'Vijay',
@@ -2023,8 +2024,17 @@ class Dummydb {
       ],
       'count': '',
       'trailer_lang': [],
-      'trailer': [ ]
+      'trailer': []
     },
+  ];
 
+  static final List rating_one = [
+    '#DirectionWorks','#CoolMusic','#QuietNice','#Entertaining','#Timepass','#Fun','#Interesting','#NiceStory','#OneTimeWatch'
+  ];
+  static final List rating_two = [
+    '#OkDirection','#HitMovie','#LovelyMusic','#GoodActing','#OneTimeWatch','#FunWatch','#GoodMusic','#NiceStory','#Enjoyable'
+  ];
+  static final List rating_three = [
+    '#SuperDirection','#Rocking','#Inspiring','#GreatActing','#BlockBuster','#WellMade','#WowMusic','#AwesomeStory','#Unbelievable'
   ];
 }

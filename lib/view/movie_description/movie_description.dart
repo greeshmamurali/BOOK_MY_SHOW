@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
+import 'package:flutter_clone_book/global_widgets/modalSheet.dart';
+import 'package:flutter_clone_book/global_widgets/movie.dart';
+import 'package:flutter_clone_book/global_widgets/movieCard.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
+import 'package:flutter_clone_book/view/book_tickets/book_tickets.dart';
+import 'package:flutter_clone_book/view/rating_description/rating_description.dart';
+import 'package:flutter_clone_book/view/rating_screen/rating_screen.dart';
 import 'package:flutter_clone_book/view/video_screen/video_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 
 class MovieDescription extends StatefulWidget {
   String name;
@@ -16,15 +24,17 @@ class MovieDescription extends StatefulWidget {
   String date;
   String desc;
   String thumb;
+  String img;
   var selectedindex;
   bool comingSoon;
 
   MovieDescription(
       {super.key,
       required this.name,
-       this.rating,
-       this.votes,
-       this.likes,
+      this.rating,
+      this.votes,
+      this.likes,
+      required this.img,
       required this.lang,
       required this.thumb,
       required this.duration,
@@ -41,11 +51,14 @@ class MovieDescription extends StatefulWidget {
 }
 
 class _MovieDescriptionState extends State<MovieDescription> {
+  List<Widget> filteredMovies = [];
   late List languageWidget;
+  late String selectedMovie;
 
   bool isExpanded = false;
 
   bool showFirst = true;
+  bool imInterested = true;
 
   late List<bool> like;
   late List<int> likeCount;
@@ -68,154 +81,211 @@ class _MovieDescriptionState extends State<MovieDescription> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(
-              Icons.chevron_left,
-              color: Colors.black,
-              size: 35,
-            ),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.chevron_left,
+            color: Colors.black,
+            size: 35,
           ),
-          title: Text(
-            widget.name,
-            style: TextStyle(
-                color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+        ),
+        title: Text(
+          selectedMovie = widget.name,
+          style: TextStyle(
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: GestureDetector(
+              onTap: () {
+                Share.share(
+                    'Check out this awesome website: https://example.com');
+              },
               child: Icon(
                 Icons.share_outlined,
                 color: Colors.black.withOpacity(.7),
               ),
-            )
+            ),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+
+            //Section 1
+            videoThumbnail(),
+            SizedBox(
+              height: 20,
+            ),
+
+            //Section 2
+            ratingContainer(),
+            SizedBox(
+              height: 20,
+            ),
+
+            //Section 3
+            dAndLanguage(),
+            SizedBox(
+              height: 10,
+            ),
+
+            //Section 4
+
+            durationSection(),
+
+            SizedBox(
+              height: 10,
+            ),
+
+            //Section 5
+            descSection(),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            //Section 6
+            bankOffers(),
+
+            SizedBox(
+              height: 10,
+            ),
+
+            Divider(
+              height: 1,
+              color: ColorConstants.GREY_COLOR,
+            ),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            //Section 7
+            widget.comingSoon ? SizedBox.shrink() : topReviews(),
+
+            SizedBox(
+              height: 10,
+            ),
+
+            Divider(
+              height: 1,
+              color: ColorConstants.GREY_COLOR,
+            ),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            castSection(),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            Divider(
+              height: 1,
+              color: ColorConstants.GREY_COLOR,
+            ),
+
+            SizedBox(
+              height: 20,
+            ),
+
+            crewSection(),
+
+            SizedBox(
+              height: 15,
+            ),
+
+            Divider(
+              height: 1,
+              color: ColorConstants.GREY_COLOR,
+            ),
+
+            SizedBox(height: 15),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                children: [
+                  Text(
+                    'You might also like',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                    'View All >',
+                    style: TextStyle(
+                        color: ColorConstants.PRIMARY_COLOR, fontSize: 14),
+                  )
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: 10,
+            ),
+
+            movieCard(
+                movies: Dummydb.movies
+                    .where((movie) => movie['name'] != selectedMovie)
+                    .toList())
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 20,
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: InkWell(
+          onTap: () {
+            List<String> Dims = widget.Dim.split(',');
+            List<String> FirstLang = widget.lang.split(',');
+            if (Dims.length > 1)
+              setState(() {
+                showModalBottomSheet(
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) {
+                    return modalSheet(widget: widget, Dims: Dims,FirstLang: FirstLang,);
+                  },
+                );
+              });
+            else {
+              Navigator.of(context).push(PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    BookTickets(name: widget.name,firstLang: FirstLang[0],dim: '2D',),
+                transitionsBuilder: itionAnimation,
+              ));
+            }
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: ColorConstants.PRIMARY_COLOR),
+            child: Center(
+              child: Text(
+                'Book tickets',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22),
               ),
-
-              //Section 1
-              videoThumbnail(),
-              SizedBox(
-                height: 20,
-              ),
-
-              //Section 2
-              ratingContainer(),
-              SizedBox(
-                height: 20,
-              ),
-
-              //Section 3
-              dAndLanguage(),
-              SizedBox(
-                height: 10,
-              ),
-
-              //Section 4
-
-              durationSection(),
-
-              SizedBox(
-                height: 10,
-              ),
-
-              //Section 5
-              descSection(),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              //Section 6
-              bankOffers(),
-
-              SizedBox(
-                height: 10,
-              ),
-
-              Divider(
-                height: 1,
-                color: ColorConstants.GREY_COLOR,
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              //Section 7
-              topReviews(),
-
-              SizedBox(
-                height: 10,
-              ),
-
-              Divider(
-                height: 1,
-                color: ColorConstants.GREY_COLOR,
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              castSection(),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              Divider(
-                height: 1,
-                color: ColorConstants.GREY_COLOR,
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              crewSection(),
-
-              SizedBox(
-                height: 15,
-              ),
-
-              Divider(
-                height: 1,
-                color: ColorConstants.GREY_COLOR,
-              ),
-
-              SizedBox(height: 15),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Row(
-                  children: [
-                    Text(
-                      'You might also like',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Spacer(),
-                    Text(
-                      'View All >',
-                      style: TextStyle(
-                          color: ColorConstants.PRIMARY_COLOR, fontSize: 14),
-                    )
-                  ],
-                ),
-              )
-            ],
+            ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   Column crewSection() {
@@ -383,7 +453,7 @@ class _MovieDescriptionState extends State<MovieDescription> {
               ),
               Spacer(),
               Text(
-                '987 reviews >',
+                '${reviews.length} reviews >',
                 style: TextStyle(
                     color: ColorConstants.PRIMARY_COLOR, fontSize: 16),
               )
@@ -396,7 +466,7 @@ class _MovieDescriptionState extends State<MovieDescription> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Text(
-            'Summary of 987 reviews. Tap a hashtag to read more',
+            'Summary of ${reviews.length} reviews. Tap a hashtag to read more',
             maxLines: 2,
             style: TextStyle(
                 color: ColorConstants.SEC4_GREY_COLOR,
@@ -425,7 +495,7 @@ class _MovieDescriptionState extends State<MovieDescription> {
 
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                  width: 300,
+                  width: 310,
                   decoration: BoxDecoration(
                       border: Border.all(
                           width: 1, color: ColorConstants.GREY_COLOR),
@@ -466,7 +536,7 @@ class _MovieDescriptionState extends State<MovieDescription> {
                                 width: 5,
                               ),
                               Text(
-                                review['rating'],
+                                '${review['rating']}/10',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
@@ -852,18 +922,28 @@ class _MovieDescriptionState extends State<MovieDescription> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Container(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '${widget.duration} • ${widget.genre}, • ${widget.age}, • ${widget.date}',
-              textAlign: TextAlign.start,
-              maxLines: 2,
-              style: TextStyle(
-                fontSize: 13,
-                color: ColorConstants.GREY_COLOR,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+              alignment: Alignment.centerLeft,
+              child: widget.comingSoon
+                  ? Text(
+                      '${widget.duration} • ${widget.genre}, • ${widget.age}',
+                      textAlign: TextAlign.start,
+                      maxLines: 2,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: ColorConstants.GREY_COLOR,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  : Text(
+                      '${widget.duration} • ${widget.genre}, • ${widget.age}, • ${widget.date}',
+                      textAlign: TextAlign.start,
+                      maxLines: 2,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: ColorConstants.GREY_COLOR,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
         ),
       ],
     );
@@ -955,126 +1035,189 @@ class _MovieDescriptionState extends State<MovieDescription> {
   }
 
   Container ratingContainer() {
-    return widget.comingSoon?
-    Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      width: double.infinity,
-      height: 70,
-      decoration: BoxDecoration(
-          color: ColorConstants.VOTES_COLOR.withOpacity(.2),
-          borderRadius: BorderRadius.circular(7)),
-      child: Container(
-        width: MediaQuery.of(context).size.width*.7,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Icon(Icons.thumb_up, color: ColorConstants.THUMB_UP,size: 15,),
-            SizedBox(
-              width: 3,
-            ),
-           RichText(
-            maxLines: 3,
-            text: TextSpan(
-            text: widget.likes,
-            style: TextStyle(
-              color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17
-            ),
-            children: <TextSpan> [
-              TextSpan(
-                text: ' are interested\nMark interested to know when\nbookings open',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,fontWeight: FontWeight.normal
-                )
-              )
-            ]
-           )),
-            Spacer(),
-            
-            Container(
-                            height: 23,
-                            padding: EdgeInsets.symmetric(horizontal: 6),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                    width: 1,
-                                    color: ColorConstants.PRIMARY_COLOR)),
-                            child: Center(
-                              child: Text(
-                                'Interested?',
-                                style: TextStyle(
-                                    color: ColorConstants.PRIMARY_COLOR,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          )
-          ],
-        ),
-      ),
-    ):
-
-
-
-
-    Container(
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      width: double.infinity,
-      height: 70,
-      decoration: BoxDecoration(
-          color: ColorConstants.VOTES_COLOR.withOpacity(.2),
-          borderRadius: BorderRadius.circular(7)),
-      child: Row(
-        children: [
-          Icon(Icons.star, color: ColorConstants.PRIMARY_COLOR.withOpacity(.8)),
-          SizedBox(
-            width: 3,
-          ),
-          Text(
-            '${widget.rating}/10',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Text(
-            '(${widget.votes} Votes)',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.w500, fontSize: 15),
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Icon(
-            Icons.chevron_right,
-            color: ColorConstants.SEC4_GREY_COLOR,
-            size: 14,
-          ),
-          Spacer(),
-          Container(
-            padding: EdgeInsets.all(2),
+    return widget.comingSoon
+        ? Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            width: double.infinity,
+            height: 70,
             decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(9),
-                border:
-                    Border.all(width: 1, color: ColorConstants.PRIMARY_COLOR)),
-            child: Center(
-              child: Text(
-                'Rate now',
-                style: TextStyle(
-                    color: ColorConstants.PRIMARY_COLOR,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold),
+                color: ColorConstants.VOTES_COLOR.withOpacity(.2),
+                borderRadius: BorderRadius.circular(7)),
+            child: Container(
+              width: MediaQuery.of(context).size.width * .7,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.thumb_up,
+                    color: ColorConstants.THUMB_UP,
+                    size: 15,
+                  ),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  RichText(
+                      maxLines: 3,
+                      text: TextSpan(
+                          text: widget.likes,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: imInterested
+                                    ? ' are interested\nMark interested to know when\nbookings open'
+                                    : " are interested\nWe'll notify you when it releases",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.normal))
+                          ])),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        imInterested = !imInterested;
+                      });
+                    },
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        height: 23,
+                        padding: EdgeInsets.symmetric(horizontal: 6),
+                        decoration: BoxDecoration(
+                            color: imInterested
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius:
+                                imInterested ? BorderRadius.circular(6) : null,
+                            border: imInterested
+                                ? Border.all(
+                                    width: 1,
+                                    color: ColorConstants.PRIMARY_COLOR)
+                                : null),
+                        child: Center(
+                            child: imInterested
+                                ? Text(
+                                    'Interested?',
+                                    style: TextStyle(
+                                        color: ColorConstants.PRIMARY_COLOR,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                : Text(
+                                    'Undo',
+                                    style: TextStyle(
+                                        color: ColorConstants.PRIMARY_COLOR,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           )
-        ],
-      ),
-    );
+        : Container(
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            width: double.infinity,
+            height: 70,
+            decoration: BoxDecoration(
+                color: ColorConstants.VOTES_COLOR.withOpacity(.2),
+                borderRadius: BorderRadius.circular(7)),
+            child: Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          RatingDescription(
+                        name: widget.name,
+                        rating: widget.rating,
+                        votes: widget.votes,
+                        reviews: reviews,
+                        img: widget.img,
+                      ),
+                      transitionsBuilder: itionAnimation,
+                    ));
+                  },
+                  child: Row(
+                    children: [
+                      FaIcon(
+                        FontAwesomeIcons.solidStar,
+                        color: ColorConstants.PRIMARY_COLOR,
+                        size: 17,
+                      ),
+                      SizedBox(
+                        width: 3,
+                      ),
+                      Text(
+                        '${widget.rating}/10',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17),
+                      ),
+                      SizedBox(
+                        width: 3,
+                      ),
+                      Text(
+                        '(${widget.votes} Votes)',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15),
+                      ),
+                      SizedBox(
+                        width: 3,
+                      ),
+                      Icon(
+                        Icons.chevron_right,
+                        color: ColorConstants.SEC4_GREY_COLOR,
+                        size: 14,
+                      ),
+                    ],
+                  ),
+                ),
+                Spacer(),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 3),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(9),
+                      border: Border.all(
+                          width: 1, color: ColorConstants.PRIMARY_COLOR)),
+                  child: Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  RatingScreen(
+                            image: widget.img,
+                            name: widget.name,
+                            review: reviews,
+                          ),
+                          transitionsBuilder: itionAnimation,
+                        ));
+                      },
+                      child: Text(
+                        'Rate now',
+                        style: TextStyle(
+                            color: ColorConstants.PRIMARY_COLOR,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          );
   }
 
   GestureDetector videoThumbnail() {
@@ -1136,15 +1279,34 @@ class _MovieDescriptionState extends State<MovieDescription> {
                     bottomLeft: Radius.circular(7),
                     bottomRight: Radius.circular(7))),
             child: Center(
-              child: Text(
-                'In cinemas',
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
+                child: widget.comingSoon
+                    ? Text(
+                        'Releasing on ${widget.date}',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      )
+                    : Text(
+                        'In cinemas',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      )),
           ),
         ],
       ),
     );
   }
+}
+
+Widget itionAnimation(context, animation, secondaryAnimation, child) {
+  var begin = Offset(1.0, 0.0);
+  var end = Offset.zero;
+  var curve = Curves.ease;
+
+  var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+  var offsetAnimation = animation.drive(tween);
+
+  return SlideTransition(
+    position: offsetAnimation,
+    child: child,
+  );
 }
