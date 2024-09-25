@@ -9,7 +9,7 @@ class Dummydb {
       'rating': '9.0',
       'votes': '475.7K',
       'name': 'The Greatest of All Time',
-      'D': '2D,IMAX 2D',
+      'D': '2D',
       'lang': 'Tamil, Telugu',
       'duration': '3h 3m',
       'genre': 'Action, Drama, Thriller',
@@ -110,7 +110,77 @@ class Dummydb {
         'https://youtu.be/f3xT1Nh5SNA'
             'https://youtu.be/jxCRlebiebw',
         'https://youtu.be/ITQMsaLtG1U'
-      ]
+      ],
+
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300','₹301 - ₹400','₹401 - ₹500'
+      ],
+      'rate_count':'5',
+
+      '2D_theatre': [
+  {
+    'theatre_name': 'Sangeetha Cinema: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
+    'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+  {
+    'theatre_name': 'PVR Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+    'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
+    'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.BHARATHANATYAM,
@@ -202,7 +272,77 @@ class Dummydb {
       ],
       'count': '',
       'trailer_lang': ['MALAYALAM'],
-      'trailer': ['https://youtu.be/lVnHxwWftxw']
+      'trailer': ['https://youtu.be/lVnHxwWftxw'],
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300'
+      ],
+      'rate_count':'3',
+
+      '2D_theatre': [
+  {
+    'theatre_name': 'Lulu Mall Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
+     'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Satyam Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
+    'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.ARM,
@@ -317,7 +457,157 @@ class Dummydb {
         'https://youtu.be/_qpiFuyO2FA',
         'https://youtu.be/ufeSP_CLFW0',
         'https://youtu.be/SOW4A8rSeQQ'
-      ]
+      ],
+
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200'
+      ],
+      'rate_count':'2',
+      
+      '2D_theatre': [
+  {
+    'theatre_name': 'Sangeetha Cinema: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
+     'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+  {
+    'theatre_name': 'PVR Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+    'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
+    'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+],
+
+'3D_theatre': [
+  {
+    'theatre_name': 'PVR Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['1:00 PM', '4:00 PM', '7:00 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Inox Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['2:30 PM', '5:30 PM', '8:30 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Carnival Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['12:00 PM', '3:00 PM', '6:00 PM'],
+     'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.NUNNAKUZHI,
@@ -410,8 +700,79 @@ class Dummydb {
       'count': '',
       'trailer_lang': ['MALAYALAM'],
       'trailer': {
-        ['https://youtu.be/Ek78m6BOGTQ']
+        ['https://youtu.be/Ek78m6BOGTQ'],
+        
+      },
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300','₹301 - ₹400','₹401 - ₹500'
+      ],
+      'rate_count':'5',
+
+      '2D_theatre': [
+ {
+    'theatre_name': 'Lulu Mall Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
+     'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Satyam Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
+    'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
       }
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.KISHKINDA_KANDAM,
@@ -517,7 +878,78 @@ class Dummydb {
       'trailer_lang': 'MALAYALAM',
       'trailer': {
         [' https://youtu.be/6jR7lL-o7js']
+      },
+
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300','₹301 - ₹400','₹401 - ₹500'
+      ],
+      'rate_count':'5',
+
+      '2D_theatre': [
+ {
+    'theatre_name': 'Lulu Mall Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
+     'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Satyam Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
+    'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
       }
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.STREE2,
@@ -612,7 +1044,78 @@ class Dummydb {
           'https://youtu.be/VlvOgk5BHS4',
           'https://youtu.be/D1SFjYoXRB8'
         ],
+      },
+
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300'
+      ],
+      'rate_count':'3',
+
+      '2D_theatre': [
+ {
+    'theatre_name': 'Sangeetha Cinema: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
+     'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
       }
+    ]
+  },
+  {
+    'theatre_name': 'PVR Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+    'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
+    'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.SURYAS_SATURDAY,
@@ -721,6 +1224,77 @@ class Dummydb {
         'https://youtu.be/Z1dS-hHBxJY',
         'https://youtu.be/nEgUn2W8ygY',
       ],
+
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300'
+      ],
+      'rate_count':'3',
+
+      '2D_theatre': [
+  {
+    'theatre_name': 'Sangeetha Cinema: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
+     'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+  {
+    'theatre_name': 'PVR Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+    'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
+    'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.THANGALAAN,
@@ -818,7 +1392,78 @@ class Dummydb {
         'https://youtu.be/9KUOQvF25NI',
         'https://youtu.be/Nt2czQKPD3I',
         'https://youtu.be/JpoV7ApW7zg',
-      ]
+      ],
+
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300','₹301 - ₹400','₹401 - ₹500'
+      ],
+      'rate_count':'5',
+
+      '2D_theatre': [
+ {
+    'theatre_name': 'Sangeetha Cinema: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
+     'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+  {
+    'theatre_name': 'PVR Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+    'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
+    'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.VAAZHA,
@@ -922,7 +1567,78 @@ class Dummydb {
       ],
       'count': '',
       'trailer_lang': ['MALAYALAM'],
-      'trailer': ['https://youtu.be/EdsxhVLDLb4']
+      'trailer': ['https://youtu.be/EdsxhVLDLb4'],
+
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300','₹301 - ₹400','₹401 - ₹500'
+      ],
+      'rate_count':'5',
+
+      '2D_theatre': [
+   {
+    'theatre_name': 'Lulu Mall Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
+     'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Satyam Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
+    'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+],
+
     },
     {
       'img': ImageConstants.VAAZHAII,
@@ -1014,7 +1730,77 @@ class Dummydb {
       ],
       'count': '',
       'trailer_lang': ['TAMIL'],
-      'trailer': ['https://youtu.be/-NEVvOEPubA']
+      'trailer': ['https://youtu.be/-NEVvOEPubA'],
+      
+      'ticket_rates':[
+        '₹0 - ₹100','₹101 - ₹200','₹201 - ₹300','₹301 - ₹400','₹401 - ₹500'
+      ],
+      'rate_count':'5',
+
+      '2D_theatre': [
+ {
+    'theatre_name': 'Lulu Mall Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
+     'rate':[ 
+      {
+        'type':'RECLINAR',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC PLUS',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'PRIME',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'CLASSIC',
+        'rate':'₹160',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Cinepolis Cinemas: Kochi',
+    'cancel': 'No Cancellation Available',
+    'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
+     'rate':[
+      {
+        'type':'PREMIUM',
+        'rate':'₹220',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'EXECUTIVE',
+        'rate':'₹200',
+        'avail':'AVAILABLE'
+      },
+      {
+        'type':'NORMAL',
+        'rate':'₹170',
+        'avail':'AVAILABLE'
+      },
+    ]
+  },
+  {
+    'theatre_name': 'Satyam Cinemas: Kochi',
+    'cancel': 'Cancellation Available',
+    'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
+    'rate':[
+      {
+        'type':'BLUE CIRCLE',
+        'rate':'₹350',
+        'avail':'AVAILABLE'
+      }
+    ]
+  },
+],
+
     },
   ];
 

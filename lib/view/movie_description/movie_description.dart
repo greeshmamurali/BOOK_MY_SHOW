@@ -262,13 +262,15 @@ class _MovieDescriptionState extends State<MovieDescription> {
                 );
               });
             else {
-              Navigator.of(context).push(PageRouteBuilder(
+              Navigator.of(context).pushReplacement(PageRouteBuilder(
                 pageBuilder: (context, animation, secondaryAnimation) =>
-                    BookTickets(name: widget.name,firstLang: FirstLang[0],dim: '2D',),
+                    BookTickets(name: widget.name,firstLang: FirstLang[0],dim: '2D',selectedIndex: widget.selectedindex,),
                 transitionsBuilder: itionAnimation,
               ));
             }
           },
+
+          
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
