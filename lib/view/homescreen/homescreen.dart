@@ -6,9 +6,12 @@ import 'package:flutter_clone_book/global_widgets/eventCard.dart';
 import 'package:flutter_clone_book/main.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
+import 'package:flutter_clone_book/view/location/location.dart';
 import 'package:flutter_clone_book/view/lollapalooza/lollapalooza.dart';
 import 'package:flutter_clone_book/view/movies/movies.dart';
+import 'package:flutter_clone_book/view/notifications/notifications.dart';
 import 'package:flutter_clone_book/view/search.dart/search.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../global_widgets/movieCard.dart';
@@ -21,6 +24,10 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+  Barcode? result;
+  QRViewController? qrController;
+
   PageController controller = PageController();
   PageController sec11controller = PageController();
   ScrollController scrollController = ScrollController();
@@ -28,6 +35,13 @@ class _HomescreenState extends State<Homescreen> {
   int currentPage2 = 0;
   Timer? time;
   Timer? time2;
+
+  void reassemble() {
+    super.reassemble();
+
+    qrController!.pauseCamera();
+    qrController!.resumeCamera();
+  }
 
   void initState() {
     super.initState();
@@ -82,10 +96,24 @@ class _HomescreenState extends State<Homescreen> {
               SizedBox(
                 height: 5,
               ),
-              Text(
-                'Kochi >',
-                style: TextStyle(
-                    color: ColorConstants.PRIMARY_COLOR, fontSize: 12),
+              InkWell(
+                onTap: () async {
+                  final result =
+                      await Navigator.of(context).push(PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        Location(),
+                    transitionsBuilder: itionAnimation,
+                  ));
+
+                  setState(() {
+                    selectedPlace = result;
+                  });
+                },
+                child: Text(
+                  '${selectedPlace} >',
+                  style: TextStyle(
+                      color: ColorConstants.PRIMARY_COLOR, fontSize: 12),
+                ),
               )
             ],
           ),
@@ -106,9 +134,18 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(
               width: 17,
             ),
-            Icon(
-              Icons.notifications_outlined,
-              color: Colors.black,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      Notifications(),
+                  transitionsBuilder: itionAnimation,
+                ));
+              },
+              child: Icon(
+                Icons.notifications_outlined,
+                color: Colors.black,
+              ),
             ),
             SizedBox(
               width: 17,
@@ -117,9 +154,31 @@ class _HomescreenState extends State<Homescreen> {
               padding: const EdgeInsets.only(
                 right: 26,
               ),
-              child: Icon(
-                Icons.qr_code_scanner_rounded,
-                color: Colors.black,
+              child: GestureDetector(
+                onTap: () {
+                  Expanded(
+                      child: QRView(
+                    key: qrKey,
+                    onQRViewCreated: (QRViewController qrController) {
+                      this.qrController = qrController;
+                      qrController.scannedDataStream.listen((scanData) {
+                        print(scanData.code);
+                      });
+                    },
+                  ));
+
+                  Expanded(
+                      child: Center(
+                    child: (result != null)
+                        ? Text(
+                            'Barcode Type: ${result!.format} Data: ${result!.code}')
+                        : Text('Scan a code'),
+                  ));
+                },
+                child: Icon(
+                  Icons.qr_code_scanner_rounded,
+                  color: Colors.black,
+                ),
               ),
             ),
           ],
@@ -1435,13 +1494,12 @@ class _HomescreenState extends State<Homescreen> {
                     GestureDetector(
                       onTap: () {
                         seeAllMovies = true;
-                         Navigator.of(context).push(PageRouteBuilder(
+                        Navigator.of(context).push(PageRouteBuilder(
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
                                   Movies(),
                           transitionsBuilder: itionAnimation,
                         ));
-                        
                       },
                       child: Icon(
                         Icons.camera,

@@ -128,8 +128,8 @@ class _RatingDescriptionState extends State<RatingDescription>
               ),
             )
           ];
-        },
-        body: Column(
+          },
+         body: Column(
           children: [
             TabBar(
               controller: _tabController,

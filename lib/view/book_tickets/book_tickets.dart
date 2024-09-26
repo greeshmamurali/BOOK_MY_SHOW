@@ -38,6 +38,31 @@ class _BookTicketsState extends State<BookTickets> {
 
   List selectedPrices = [];
 
+  
+
+  // List filteresTheatres() {
+  //   List filter = [];
+
+  //   for (var range in selectedPrices) {
+  //    // List<int> priceRange = priceRange(range);
+
+  //     for (var t in theatre) {
+  //       if (t['rate']['rate'] >= priceRange[0] &&
+  //           t['rate']['rate'] <= priceRange[1]) {
+  //         if (!filter.contains(t)) {
+  //           filter.add(t);
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return filter;
+  // }
+
+  List priceRange(String rate) {
+    final prices = rate.replaceAll('₹', '').split('-');
+    return [int.parse(prices[0]), int.parse(prices[1])];
+  }
+
   void initState() {
     super.initState();
     List<String> rates = Dummydb.movies[widget.selectedIndex]['ticket_rates'];
@@ -55,7 +80,6 @@ class _BookTicketsState extends State<BookTickets> {
     }
 
     String d = Dummydb.movies[widget.selectedIndex]['D'];
-
     dCount = d.split(',');
 
     String dim = Dummydb.movies[widget.selectedIndex]['D'];
@@ -252,7 +276,11 @@ class _BookTicketsState extends State<BookTickets> {
               onTap: () {
                 setState(() {
                   onTapPrice[index] = !onTapPrice[index];
-                  selectedPrices.add(onTapPrice[index]);
+                  if (selectedPrices.contains(onTapPrice[index])) {
+                    selectedPrices.remove(onTapPrice[index]);
+                  } else {
+                    selectedPrices.add(onTapPrice[index]);
+                  }
                 });
               },
               child: Container(
