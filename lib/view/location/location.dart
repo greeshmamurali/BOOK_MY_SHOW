@@ -205,8 +205,7 @@ class _LocationState extends State<Location> {
     return SizedBox(
       height: 280,
       child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
+       
         
         itemCount: displayLocations.length,
         gridDelegate:

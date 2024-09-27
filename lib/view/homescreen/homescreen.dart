@@ -3,14 +3,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
 import 'package:flutter_clone_book/global_widgets/eventCard.dart';
+import 'package:flutter_clone_book/global_widgets/gradientContainer.dart';
+import 'package:flutter_clone_book/global_widgets/musicShows.dart';
 import 'package:flutter_clone_book/main.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
+import 'package:flutter_clone_book/view/buyOrRent/buyOrRent.dart';
 import 'package:flutter_clone_book/view/location/location.dart';
 import 'package:flutter_clone_book/view/lollapalooza/lollapalooza.dart';
 import 'package:flutter_clone_book/view/movies/movies.dart';
 import 'package:flutter_clone_book/view/notifications/notifications.dart';
 import 'package:flutter_clone_book/view/search.dart/search.dart';
+
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -24,6 +28,8 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  late int selectedIndex;
+
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
   QRViewController? qrController;
@@ -813,13 +819,18 @@ class _HomescreenState extends State<Homescreen> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Container(
+                width: double.parse(Dummydb.event1[index]['width']),
+                //  height: 190,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    gradient: LinearGradient(colors: [
-                      Dummydb.event1[index]['color'][0],
-                      Dummydb.event1[index]['color'][1],
-                      Dummydb.event1[index]['color'][2],
-                    ])),
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: <Color>[
+                          Dummydb.event1[index]['color'][0],
+                          Dummydb.event1[index]['color'][1],
+                          Dummydb.event1[index]['color'][2],
+                        ])),
                 child: Stack(
                   children: [
                     Positioned(
@@ -904,6 +915,7 @@ class _HomescreenState extends State<Homescreen> {
                     controller: sec11controller,
                     itemCount: 6,
                     itemBuilder: (context, index) {
+                      selectedIndex = index;
                       return Container(
                         child: Column(
                           children: [
@@ -978,22 +990,34 @@ class _HomescreenState extends State<Homescreen> {
                               height: 20,
                             ),
                             Expanded(
-                              child: Container(
-                                height: 50,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: ColorConstants.PRIMARY_COLOR),
-                                child: Center(
-                                  child: Text(
-                                    'Buy or Rent',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w800),
+                              child: Builder(builder: (context) {
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(PageRouteBuilder(
+                                      pageBuilder: (context, animation,
+                                              secondaryAnimation) =>
+                                          Buyorrent(index: selectedIndex),
+                                      transitionsBuilder: itionAnimation,
+                                    ));
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: ColorConstants.PRIMARY_COLOR),
+                                    child: Center(
+                                      child: Text(
+                                        'Buy or Rent',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w800),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
+                                );
+                              }),
                             ),
                             SizedBox(
                               height: 10,
@@ -1053,53 +1077,12 @@ class _HomescreenState extends State<Homescreen> {
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: double.parse(Dummydb.category[index]['width']),
-                    height: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                            colors: <Color>[
-                              Dummydb.category[index]['color'][0],
-                              Dummydb.category[index]['color'][1],
-                              Dummydb.category[index]['color'][2],
-                              Dummydb.category[index]['color'][3],
-                            ])),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    Dummydb.category[index]['text'],
-                                    maxLines: 2,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 2,
-                                  ),
-                                  Text(
-                                    Dummydb.category[index]['events'],
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 8),
-                                  )
-                                ],
-                              ),
-                            ))
-                      ],
-                    ),
+                  return gradientContainer(
+                    width: Dummydb.category[index]['width'],
+                    color: Dummydb.category[index]['color'],
+                    title: Dummydb.category[index]['text'],
+                    eventNo: Dummydb.category[index]['events'],
+                    height: 190,
                   );
                 },
                 separatorBuilder: (context, index) => SizedBox(
@@ -1164,53 +1147,12 @@ class _HomescreenState extends State<Homescreen> {
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: double.parse(Dummydb.week[index]['width']),
-                    height: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                            colors: <Color>[
-                              Dummydb.week[index]['color'][0],
-                              Dummydb.week[index]['color'][1],
-                              Dummydb.week[index]['color'][2],
-                              Dummydb.week[index]['color'][3],
-                            ])),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    Dummydb.week[index]['text'],
-                                    maxLines: 2,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 2,
-                                  ),
-                                  Text(
-                                    Dummydb.week[index]['events'],
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 8),
-                                  )
-                                ],
-                              ),
-                            ))
-                      ],
-                    ),
+                  return gradientContainer(
+                    width: Dummydb.week[index]['width'],
+                    color: Dummydb.week[index]['color'],
+                    title: Dummydb.week[index]['text'],
+                    eventNo: Dummydb.week[index]['events'],
+                    height: 190,
                   );
                 },
                 separatorBuilder: (context, index) => SizedBox(
@@ -1489,56 +1431,66 @@ class _HomescreenState extends State<Homescreen> {
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: Row(
               children: [
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        seeAllMovies = true;
-                        Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) =>
-                                  Movies(),
-                          transitionsBuilder: itionAnimation,
-                        ));
-                      },
-                      child: Icon(
+                InkWell(
+                  onTap: () {
+                    seeAllMovies = true;
+                    Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          Movies(),
+                      transitionsBuilder: itionAnimation,
+                    ));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(
                         Icons.camera,
                         color: Colors.black,
                       ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'Movies',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Movies',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: 30,
                 ),
-                Column(
-                  children: [
-                    Icon(
-                      Icons.emoji_symbols,
-                      color: Colors.black,
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'Music\nShows',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          MusicShows(
+                        dataBase: Dummydb.MUSIC_STUDIO,
+                      ),
+                      transitionsBuilder: itionAnimation,
+                    ));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.emoji_symbols,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Music\nShows',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: 30,
@@ -1564,44 +1516,62 @@ class _HomescreenState extends State<Homescreen> {
                 SizedBox(
                   width: 30,
                 ),
-                Column(
-                  children: [
-                    Icon(
-                      Icons.directions_run,
-                      color: Colors.black,
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'Sports',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          MusicShows(dataBase: Dummydb.Games),
+                      transitionsBuilder: itionAnimation,
+                    ));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.directions_run,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Sports',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: 30,
                 ),
-                Column(
-                  children: [
-                    Icon(
-                      Icons.campaign,
-                      color: Colors.black,
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'Comedy\nShows',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          MusicShows(dataBase: Dummydb.LAUGHTER_CATEGORY),
+                      transitionsBuilder: itionAnimation,
+                    ));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.campaign,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Comedy\nShows',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: 30,

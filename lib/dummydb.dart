@@ -1638,18 +1638,8 @@ class Dummydb {
       'name': 'Read Between The Lines by Naveen Richard',
       'location': 'Spotlight Socials: Kochi Stand up Comedy'
     },
-    {
-      'img': ImageConstants.JUSTMARRIED,
-      'date': 'Sat, 14 Sep',
-      'name': 'Just Married by Navin Kumar(English Stand Up Solo)',
-      'location': 'Wire Up: Benglaru Stand up Comedy'
-    },
-    {
-      'img': ImageConstants.MALAYALAM,
-      'date': 'Sat, 21 Sep onwards',
-      'name': 'Malayalam Crowd Work Show',
-      'location': 'Commons: Kochi'
-    },
+   
+
     {
       'img': ImageConstants.ABHISHEK_UPU,
       'date': 'Fri, 31 Jan',
@@ -1668,33 +1658,13 @@ class Dummydb {
       'name': 'Sriraam Padmanabhan Playing Devils Advocate',
       'location': 'The J Spot Juhu: Mumbai'
     },
-    {
-      'img': ImageConstants.ASWINAREE,
-      'date': 'Sun, 15 Sep',
-      'name': 'Ashwin Srinivas Live',
-      'location': 'Dhwani Indiranagar: Bengaluru'
-    },
-    {
-      'img': ImageConstants.OMLCOM,
-      'date': 'Sat, 21 Sep',
-      'name': 'OML Comedy Pit Stop',
-      'location': 'Multiple Venues'
-    },
+   
+    
   ];
 
   static const List Games = [
-    {
-      'img': ImageConstants.JUNIOR_WORLD,
-      'date': 'Tue, 10 Sep',
-      'name': 'Junior Wonder Virtual Marathon for Kids',
-      'location': 'Marathon'
-    },
-    {
-      'img': ImageConstants.TRICOLOR,
-      'date': 'Sun, 15 Sep onwards',
-      'name': 'Tricolor Triumph Virtual Run',
-      'location': 'Marathon'
-    },
+   
+    
     {
       'img': ImageConstants.MAHATMA,
       'date': 'Sun, 6 Oct',
@@ -1781,20 +1751,14 @@ class Dummydb {
       'location': 'Bolgatty Palace and Island Resort: Kochi',
       'category': 'Concerts'
     },
-    {
-      'img': ImageConstants.LOL_1,
-      'date': 'Sat, 8 Maar',
-      'name': 'Lollapalooza India 2025',
-      'location': 'Mumbai',
-      'category': 'Concerts'
-    },
-    {
-      'img': ImageConstants.SUNBURN,
-      'date': 'Sun, 6 Oct',
-      'name': 'Sunburn Arena Ft. Alan Walker - Kochi',
-      'location': 'Bolgatty Palace and Island Resort: Kochi',
-      'category': 'Concerts'
-    },
+    // {
+    //   'img': ImageConstants.LOL_1,
+    //   'date': 'Sat, 8 Mar',
+    //   'name': 'Lollapalooza India 2025',
+    //   'location': 'Mumbai',
+    //   'category': 'Concerts'
+    // },
+
     {
       'img': ImageConstants.KSCHITRA,
       'date': 'Fri, 13 Sep',
@@ -2475,38 +2439,65 @@ class Dummydb {
     {'img': ImageConstants.KOCHI_CITY, 'name': 'Kochi'},
   ];
 
- static final List<String> cities = [
-  'Aalo',
-  'Abohar',
-  'Agra',
-  'Ahmedabad',
-  'Ajmer',
-  'Alappuzha',
-  'Aligarh',
-  'Allahabad',
-  'Amritsar',
-  'Bangalore',
-  'Bhopal',
-  'Bhubaneswar',
-  'Chandigarh',
-  'Chennai',
-  'Coimbatore',
-  'Delhi',
-  'Dehradun',
-  'Gandhinagar',
-  'Guwahati',
-  'Hyderabad',
-  'Indore',
-  'Jaipur',
-  'Jaisalmer',
-  'Jammu',
-  'Jodhpur',
-  'Kolkata',
-  'Kozhikode',
-  'Lucknow',
-  'Ludhiana',
-  'Mumbai',
-  'Nagpur',
-];
+  static final List<String> cities = [
+    'Aalo',
+    'Abohar',
+    'Agra',
+    'Ahmedabad',
+    'Ajmer',
+    'Alappuzha',
+    'Aligarh',
+    'Allahabad',
+    'Amritsar',
+    'Bangalore',
+    'Bhopal',
+    'Bhubaneswar',
+    'Chandigarh',
+    'Chennai',
+    'Coimbatore',
+    'Delhi',
+    'Dehradun',
+    'Gandhinagar',
+    'Guwahati',
+    'Hyderabad',
+    'Indore',
+    'Jaipur',
+    'Jaisalmer',
+    'Jammu',
+    'Jodhpur',
+    'Kolkata',
+    'Kozhikode',
+    'Lucknow',
+    'Ludhiana',
+    'Mumbai',
+    'Nagpur',
+  ];
 
+  static const List bottomGradient = [
+    {
+      'width':'100',
+      'color':ColorConstants.TODAY,
+      'bottomtext':'Performances'
+    },
+    {
+      'width':'100',
+      'color':ColorConstants.TOMORROW,
+      'bottomtext':'Music\nShows'
+    },
+    {
+      'width':'100',
+      'color':ColorConstants.WEEKEND,
+      'bottomtext':'Kids'
+    },
+    {
+      'width':'100',
+      'color':ColorConstants.COMEDY,
+      'bottomtext':'Sports'
+    },
+    {
+      'width':'100',
+      'color':ColorConstants.KIDS,
+      'bottomtext':'Meetups'
+    },
+  ];
 }
