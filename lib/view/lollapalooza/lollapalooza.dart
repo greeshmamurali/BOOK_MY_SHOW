@@ -905,10 +905,7 @@ class _LollapaloozaState extends State<Lollapalooza> {
                                                       ],
                                                       color: Colors.white,
                                                     ),
-                                                    // padding: EdgeInsets
-                                                    //     .symmetric(
-                                                    //         horizontal: 15,
-                                                    //         vertical: 13),
+                                                   
                                                     height: 60,
                                                     width: double.infinity,
 

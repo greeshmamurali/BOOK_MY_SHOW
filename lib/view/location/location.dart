@@ -98,8 +98,7 @@ class _LocationState extends State<Location> {
         leading: InkWell(
           onTap: () {
             Navigator.pop(context);
-            transitionsBuilder:
-            itionAnimation;
+
           },
           child: Icon(
             Icons.chevron_left,
@@ -168,8 +167,8 @@ class _LocationState extends State<Location> {
               setState(() {
                 selectedPlace = filteredCities[index];
                 Navigator.pop(context, selectedPlace);
-                transitionsBuilder:
-                itionAnimation;
+                
+                
               });
             },
             child: Container(
@@ -217,8 +216,7 @@ class _LocationState extends State<Location> {
               setState(() {
                 selectedPlace = displayLocations[index]['name'];
                 Navigator.pop(context, selectedPlace);
-                transitionsBuilder:
-                itionAnimation;
+               
               });
             },
             child: Container(

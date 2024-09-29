@@ -17,8 +17,7 @@ class _NotificationsState extends State<Notifications> {
         leading: InkWell(
           onTap: () {
              Navigator.pop(context);
-            transitionsBuilder:
-            itionAnimation;
+           
           },
           child: Icon(Icons.chevron_left,color: Colors.black,size: 27,)),
         title: Text('Notifications',

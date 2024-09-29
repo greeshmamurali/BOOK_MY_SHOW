@@ -139,4 +139,13 @@ class ImageConstants {
   static const String KOCHI_CITY = 'assets/images/kochi.png';
 
   static const String NOTIFICATION_BELL = 'assets/images/alarm.png';
+
+  static const String CYCLE = 'assets/images/downhill-bike.png';
+  static const String BIKE = 'assets/images/scooter_4321827.png';
+  static const String CAR1 = 'assets/images/car1.png';
+  static const String CAR2 = 'assets/images/car2.png';
+  static const String CAR3 = 'assets/images/car3.png';
+  static const String BUS = 'assets/images/bus.png';
+  static const String AUTO = 'assets/images/rickshaw.png';
+  static const String CAR4 = 'assets/images/racing-car.png';
 }

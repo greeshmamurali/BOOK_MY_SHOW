@@ -168,7 +168,9 @@ class _HomescreenState extends State<Homescreen> {
                     onQRViewCreated: (QRViewController qrController) {
                       this.qrController = qrController;
                       qrController.scannedDataStream.listen((scanData) {
-                        print(scanData.code);
+                        setState(() {
+                          result = scanData;
+                        });
                       });
                     },
                   ));
@@ -293,7 +295,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
 
               //Section 8
-              amusementSection(),
+              // amusementSection(),
 
               SizedBox(
                 height: 25,

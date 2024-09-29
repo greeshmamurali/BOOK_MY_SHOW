@@ -563,8 +563,7 @@ class _RatingScreenState extends State<RatingScreen> {
             child: InkWell(
               onTap: () {
                 Navigator.pop(context);
-                transitionsBuilder:
-                itionAnimation;
+               
               },
               child: Icon(
                 Icons.close,

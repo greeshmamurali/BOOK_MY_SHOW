@@ -3,6 +3,7 @@ import 'package:flutter_clone_book/dummydb.dart';
 import 'package:flutter_clone_book/global_widgets/modalSheet.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/view/movie_description/movie_description.dart';
+import 'package:flutter_clone_book/view/theatre/theatre.dart';
 
 class BookTickets extends StatefulWidget {
   String name;
@@ -28,7 +29,7 @@ class _BookTicketsState extends State<BookTickets> {
 
   List dCount = [];
 
-  int selecteddate = -1;
+  int selecteddate = 0;
 
   List<String> Dims = [];
 
@@ -38,30 +39,11 @@ class _BookTicketsState extends State<BookTickets> {
 
   List selectedPrices = [];
 
-  
+  bool change = false;
 
-  // List filteresTheatres() {
-  //   List filter = [];
-
-  //   for (var range in selectedPrices) {
-  //    // List<int> priceRange = priceRange(range);
-
-  //     for (var t in theatre) {
-  //       if (t['rate']['rate'] >= priceRange[0] &&
-  //           t['rate']['rate'] <= priceRange[1]) {
-  //         if (!filter.contains(t)) {
-  //           filter.add(t);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return filter;
-  // }
-
-  List priceRange(String rate) {
-    final prices = rate.replaceAll('₹', '').split('-');
-    return [int.parse(prices[0]), int.parse(prices[1])];
-  }
+  List selectday = [];
+  List selectmonth = [];
+  List selectweek = [];
 
   void initState() {
     super.initState();
@@ -241,23 +223,39 @@ class _BookTicketsState extends State<BookTickets> {
           mainAxisSpacing: 10,
           mainAxisExtent: 38),
       itemBuilder: (context, timeindex) {
-        return Container(
-          padding: EdgeInsets.all(6),
-          decoration: BoxDecoration(
-              border: Border.all(
-                  width: 1,
-                  color: ColorConstants.SEC4_GREY_COLOR.withOpacity(.4)),
-              borderRadius: BorderRadius.circular(5)),
-          child: Center(
-            child: Column(
-              children: [
-                Text(
-                  theatre[index]['show_time'][timeindex],
-                  style: TextStyle(
-                      color: ColorConstants.THUMB_UP,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+        return InkWell(
+          onTap: () {
+            Navigator.of(context).push(PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => Theatre(
+                theatreIndex: index,
+                theatreList: theatre,
+                filmname: widget.name,
+                day: selectday[selecteddate],
+                month: selectmonth[selecteddate],
+                dayName: selectweek[selecteddate],
+                
+              ),
+              transitionsBuilder: itionAnimation,
+            ));
+          },
+          child: Container(
+            padding: EdgeInsets.all(6),
+            decoration: BoxDecoration(
+                border: Border.all(
+                    width: 1,
+                    color: ColorConstants.SEC4_GREY_COLOR.withOpacity(.4)),
+                borderRadius: BorderRadius.circular(5)),
+            child: Center(
+              child: Column(
+                children: [
+                  Text(
+                    theatre[index]['show_time'][timeindex],
+                    style: TextStyle(
+                        color: ColorConstants.THUMB_UP,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -275,12 +273,8 @@ class _BookTicketsState extends State<BookTickets> {
             return InkWell(
               onTap: () {
                 setState(() {
+                  change = true;
                   onTapPrice[index] = !onTapPrice[index];
-                  if (selectedPrices.contains(onTapPrice[index])) {
-                    selectedPrices.remove(onTapPrice[index]);
-                  } else {
-                    selectedPrices.add(onTapPrice[index]);
-                  }
                 });
               },
               child: Container(
@@ -383,6 +377,9 @@ class _BookTicketsState extends State<BookTickets> {
   }
 
   SizedBox dateSection() {
+    int day;
+    String monthName;
+    String dayName;
     return SizedBox(
         height: 100,
         child: ListView.builder(
@@ -391,11 +388,10 @@ class _BookTicketsState extends State<BookTickets> {
           itemBuilder: (context, index) {
             double width = MediaQuery.of(context).size.width / 7;
             DateTime today = DateTime.now();
-            int date = today.day;
-            List day = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-            int month = today.month;
-
-            String monthName = [
+            DateTime displayDate = today.add(Duration(days: index));
+            day = displayDate.day;
+            selectday.insert(index, day);
+            monthName = [
               'JAN',
               'FEB',
               'MAR',
@@ -408,7 +404,21 @@ class _BookTicketsState extends State<BookTickets> {
               'OCT',
               'NOV',
               'DEC'
-            ][month - 1];
+            ][displayDate.month - 1];
+            selectmonth.insert(index, monthName);
+
+            List<String> dayNames = [
+              'SUN',
+              'MON',
+              'TUE',
+              'WED',
+              'THU',
+              'FRI',
+              'SAT'
+            ];
+            dayName = dayNames[displayDate.weekday % 7];
+            selectweek.insert(index, dayName);
+
             return InkWell(
               onTap: () {
                 setState(() {
@@ -425,35 +435,33 @@ class _BookTicketsState extends State<BookTickets> {
                 child: Column(
                   children: [
                     Text(
-                      day[(today.weekday + index) % 7],
+                      dayName,
                       style: TextStyle(
-                          color: selecteddate == index
-                              ? Colors.white
-                              : ColorConstants.SEC4_GREY_COLOR,
-                          fontWeight: FontWeight.bold),
+                        color: selecteddate == index
+                            ? Colors.white
+                            : ColorConstants.SEC4_GREY_COLOR,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    SizedBox(
-                      height: 3,
-                    ),
+                    SizedBox(height: 3),
                     Text(
-                      '${date + index}'.toString(),
+                      '$day',
                       style: TextStyle(
-                          color: selecteddate == index
-                              ? Colors.white
-                              : Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                        color:
+                            selecteddate == index ? Colors.white : Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
-                    SizedBox(
-                      height: 3,
-                    ),
+                    SizedBox(height: 3),
                     Text(
                       monthName,
                       style: TextStyle(
-                          color: selecteddate == index
-                              ? Colors.white
-                              : ColorConstants.SEC4_GREY_COLOR,
-                          fontWeight: FontWeight.bold),
+                        color: selecteddate == index
+                            ? Colors.white
+                            : ColorConstants.SEC4_GREY_COLOR,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),

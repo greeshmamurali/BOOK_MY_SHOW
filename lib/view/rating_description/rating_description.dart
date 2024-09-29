@@ -40,8 +40,7 @@ class _RatingDescriptionState extends State<RatingDescription>
         leading: InkWell(
           onTap: () {
             Navigator.pop(context);
-            transitionsBuilder:
-            itionAnimation;
+            
           },
           child: Icon(
             Icons.chevron_left,

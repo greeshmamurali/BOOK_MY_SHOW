@@ -125,7 +125,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'10','seatno':'10'}
           ]
         },
         {
@@ -133,10 +133,10 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -144,9 +144,9 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'10'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
           ]
         },
       ],
@@ -250,10 +250,10 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+             {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -261,9 +261,9 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'7'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'4','seatno':'10'},
           ]
         },
         {
@@ -271,7 +271,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'8','seatno':'10'}
           ]
         },
       ],
@@ -398,7 +398,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'10','seatno':'10'}
           ]
         },
         {
@@ -406,10 +406,10 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+             {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -417,9 +417,9 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:00 AM', '01:00 PM', '04:00 PM', '07:00 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'7'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'4','seatno':'10'},
           ]
         },
       ],
@@ -429,10 +429,10 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['1:00 PM', '4:00 PM', '7:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+                {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -440,10 +440,10 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['2:30 PM', '5:30 PM', '8:30 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'7'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'7'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'7','seatno':'10'},
           ]
         },
         {
@@ -451,9 +451,9 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['12:00 PM', '3:00 PM', '6:00 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'7','seatno':'9'},
           ]
         },
       ],
@@ -565,10 +565,10 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+           {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -576,9 +576,9 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'7'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'4','seatno':'10'},
           ]
         },
         {
@@ -586,7 +586,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+             {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'8','seatno':'10'}
           ]
         },
       ],
@@ -704,16 +704,16 @@ class Dummydb {
         '₹401 - ₹500'
       ],
       'rate_count': '5',
-      '2D_theatre': [
+     '2D_theatre': [
         {
           'theatre_name': 'Lulu Mall Cinemas: Kochi',
           'cancel': 'Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+           {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -721,9 +721,9 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'7'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'4','seatno':'10'},
           ]
         },
         {
@@ -731,7 +731,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+             {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'8','seatno':'10'}
           ]
         },
       ],
@@ -1110,7 +1110,7 @@ class Dummydb {
         '₹401 - ₹500'
       ],
       'rate_count': '5',
-      '2D_theatre': [
+     '2D_theatre': [
         {
           'theatre_name': 'Sangeetha Cinema: Kochi',
           'cancel': 'Cancellation Available',
@@ -1259,10 +1259,10 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+           {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -1270,9 +1270,9 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'7'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'4','seatno':'10'},
           ]
         },
         {
@@ -1280,7 +1280,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+             {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'8','seatno':'10'}
           ]
         },
       ],
@@ -1390,10 +1390,10 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['11:00 AM', '02:00 PM', '05:00 PM', '08:00 PM'],
           'rate': [
-            {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE'},
+           {'type': 'RECLINAR', 'rate': '₹350', 'avail': 'AVAILABLE','row':'1','seatno':'10'},
+            {'type': 'CLASSIC PLUS', 'rate': '₹200', 'avail': 'AVAILABLE','row':'6','seatno':'10'},
+            {'type': 'PRIME', 'rate': '₹200', 'avail': 'AVAILABLE','row':'8','seatno':'10'},
+            {'type': 'CLASSIC', 'rate': '₹160', 'avail': 'AVAILABLE','row':'3','seatno':'10'},
           ]
         },
         {
@@ -1401,9 +1401,9 @@ class Dummydb {
           'cancel': 'No Cancellation Available',
           'show_time': ['12:30 PM', '03:30 PM', '06:30 PM'],
           'rate': [
-            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE'},
-            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE'},
-            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE'},
+            {'type': 'PREMIUM', 'rate': '₹220', 'avail': 'AVAILABLE','row':'2','seatno':'7'},
+            {'type': 'EXECUTIVE', 'rate': '₹200', 'avail': 'AVAILABLE','row':'5','seatno':'10'},
+            {'type': 'NORMAL', 'rate': '₹170', 'avail': 'AVAILABLE','row':'4','seatno':'10'},
           ]
         },
         {
@@ -1411,7 +1411,7 @@ class Dummydb {
           'cancel': 'Cancellation Available',
           'show_time': ['10:15 AM', '01:15 PM', '04:15 PM'],
           'rate': [
-            {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE'}
+             {'type': 'BLUE CIRCLE', 'rate': '₹350', 'avail': 'AVAILABLE','row':'8','seatno':'10'}
           ]
         },
       ],
@@ -1503,48 +1503,384 @@ class Dummydb {
       'name': 'Immaculate',
       'sec1': '1h 28m • Horror, Thriller • A',
       'lang': 'English, Hindi, Tamil, Telugu',
+      'subtitle':'English',
+      'date':'9 Aug 2024',
+      'rent':'119',
+      'buy':'456',
       'desc':
-          'An American nun discovers that her new, idyllic convent in the Italian countryside is hiding sinister horrors.'
+          'An American nun discovers that her new, idyllic convent in the Italian countryside is hiding sinister horrors.',
+           'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
     },
     {
       'img': ImageConstants.GOLDRUN,
       'name': 'Gold Run',
       'sec1': '1h 58m • Drama,Suspense,War • 16+',
       'lang': 'Norwegian, Hindi, Tamil, Telugu',
+      'subtitle':'English',
+      'date':'30 Sep 2024',
+      'rent':'110',
+      'buy':'499',
       'desc':
-          "Based on the true story of the effort to evacuate the entire Norwegian gold reserve out of Norway during the German invasion of Norway in World War II to keep the gold out of Germany's hands."
+          "Based on the true story of the effort to evacuate the entire Norwegian gold reserve out of Norway during the German invasion of Norway in World War II to keep the gold out of Germany's hands.",
+           'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
     },
     {
       'img': ImageConstants.NEERJA,
       'name': 'Neerja',
       'sec1': '1h 2m • Biography,Drama • U',
       'lang': 'Hindi',
+      'subtitle':'English, Hindi',
+      'date':'9 Aug 2024',
+       'rent':'149',
+      'buy':'399',
       'desc':
-          "Neerja is a biopic and a cinematic representation of the dramatic events that unfolded on September 5th, 1986 when Pan Am Flight 73 from Bombay to New York was hijacked at its transit at Jinnah International Airport in Karachi, by Palestinian extremists from Abu Nidal`s terrorist outfit. This is the story of Neerja Bhanot (Sonam Kapoor), a 22 year old part time model, who was the head purser on the flight. Neerja had escaped an abusive marriage at a very young age and as a life change, decided to become an air hostess, subsequently impressing everyone so much that they made her a purser. Throughout the horrifying situation, Neerja didn`t succumb to her fears and instead she fought her personal demons from the past and from the minute the plane was hijacked, through the terrifying 17 hours to the grueling end, she used her courage, wits and compassion to make sure that the passengers were protected, going as far as to hiding the passports of the American passengers. Through her swift thinking and brave actions, she managed to save the lives of 359 passengers and crew on board out of 379, all at the cost of her own life.\nNeerja posthumously became the youngest recipient of India`s highest civilian honour for bravery, the Ashoka Chakra, and was bestowed the Flight Safety Foundation Heroism award by U.S.A, Tamgha e Insaaniyat (awarded for showing incredible human kindness) by Pakistan, Justice for Crimes Award by United States Attorney`s office for the district of Columbia, Special Courage Award by the U.S. government and the Indian Civil Aviation Ministry`s Award as well. This is a portrayal of Neerja`s strength, courage and sacrifice and an attempt to bring before the world this lesser known Indian hero`s story, so that she becomes an example and inspiration to young girls all over for generations to come."
+          "Neerja is a biopic and a cinematic representation of the dramatic events that unfolded on September 5th, 1986 when Pan Am Flight 73 from Bombay to New York was hijacked at its transit at Jinnah International Airport in Karachi, by Palestinian extremists from Abu Nidal`s terrorist outfit. This is the story of Neerja Bhanot (Sonam Kapoor), a 22 year old part time model, who was the head purser on the flight. Neerja had escaped an abusive marriage at a very young age and as a life change, decided to become an air hostess, subsequently impressing everyone so much that they made her a purser. Throughout the horrifying situation, Neerja didn`t succumb to her fears and instead she fought her personal demons from the past and from the minute the plane was hijacked, through the terrifying 17 hours to the grueling end, she used her courage, wits and compassion to make sure that the passengers were protected, going as far as to hiding the passports of the American passengers. Through her swift thinking and brave actions, she managed to save the lives of 359 passengers and crew on board out of 379, all at the cost of her own life.\nNeerja posthumously became the youngest recipient of India`s highest civilian honour for bravery, the Ashoka Chakra, and was bestowed the Flight Safety Foundation Heroism award by U.S.A, Tamgha e Insaaniyat (awarded for showing incredible human kindness) by Pakistan, Justice for Crimes Award by United States Attorney`s office for the district of Columbia, Special Courage Award by the U.S. government and the Indian Civil Aviation Ministry`s Award as well. This is a portrayal of Neerja`s strength, courage and sacrifice and an attempt to bring before the world this lesser known Indian hero`s story, so that she becomes an example and inspiration to young girls all over for generations to come.",
+           'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
     },
     {
       'img': ImageConstants.THECHAPEL,
       'name': 'The Chapel',
       'sec1': '1h 47m • Supernatural, Thriller • U',
       'lang': 'Spanish, Hindi, Tamil, Telugu',
+      'subtitle':'English, Hindi',
+      'date':'19 Oct 2024',
+       'rent':'149',
+      'buy':'799',
       'desc':
-          '8-year-old Emma seeks help from a cynical medium to get in touch with the ghost of a girl trapped in a chapel.'
+          '8-year-old Emma seeks help from a cynical medium to get in touch with the ghost of a girl trapped in a chapel.',
+           'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
     },
     {
       'img': ImageConstants.TWISTERS,
       'name': 'Twisters',
       'sec1': '2h 2m • Action,Adventure, Thriller • UA',
       'lang': 'English, Hindi',
+      'subtitle':'English, Hindi',
+      'date':'25 Dec 2024',
+       'rent':'119',
+      'buy':'599',
       'desc':
-          "Kate Cooper, haunted by a devastating encounter with a tornado during her college years, studies storm patterns on screens safely in New York City. She is lured back to the open plains by her friend, Javi to test a groundbreaking new tracking system.\nThere, she crosses paths with Tyler Owens, the charming and reckless social-media superstar who thrives on posting his storm-chasing adventures with his raucous crew, the more dangerous the better."
+          "Kate Cooper, haunted by a devastating encounter with a tornado during her college years, studies storm patterns on screens safely in New York City. She is lured back to the open plains by her friend, Javi to test a groundbreaking new tracking system.\nThere, she crosses paths with Tyler Owens, the charming and reckless social-media superstar who thrives on posting his storm-chasing adventures with his raucous crew, the more dangerous the better.",
+           'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
     },
     {
       'img': ImageConstants.DREADFULCHAPTERS,
       'name': 'Dreadful Chapters',
       'sec1': '1h 13m • Mystery, Thriller • U',
       'lang': 'Malayalam',
+      'subtitle':'English, Malayalam',
+      'date':'9 Aug 2024',
+       'rent':'299',
+      'buy':'499',
       'desc':
-          'Taking a road trip together, friends Albin, Pooja, Arjun, Martin, Shyam, and Sreedha get stranded in the middle of the forest while on their way to a vacation home. Still managing to make it to their destination, they decide to relax and have their originally scheduled fun and partying, only to eventually stumble upon a strange cave located on the property. Deciding to explore the cave, they are soon inundated with a series of strange incidents with a malevolent force inside the cave. They must leave the area.'
+          'Taking a road trip together, friends Albin, Pooja, Arjun, Martin, Shyam, and Sreedha get stranded in the middle of the forest while on their way to a vacation home. Still managing to make it to their destination, they decide to relax and have their originally scheduled fun and partying, only to eventually stumble upon a strange cave located on the property. Deciding to explore the cave, they are soon inundated with a series of strange incidents with a malevolent force inside the cave. They must leave the area.',
+       'cast': [
+        {
+          'img': ImageConstants.VIJAY,
+          'name': 'Vijay',
+        },
+        {
+          'img': ImageConstants.KOKILA_MOHAN,
+          'name': 'Kokila Mohan',
+        },
+        {
+          'img': ImageConstants.YOGI_BABU,
+          'name': 'Yogi Babu',
+        },
+        {
+          'img': ImageConstants.PRASANTH_THIAGARAJAN,
+          'name': 'Prashanth Thiagarajan',
+        },
+        {
+          'img': ImageConstants.PRABHU_DEVA,
+          'name': 'Prabhu Deva',
+        },
+        {
+          'img': ImageConstants.JAYARAM,
+          'name': 'Jayaram Subramaniam',
+        },
+        {
+          'img': ImageConstants.SNEHA_PRASANAN,
+          'name': 'Sneha Prasanna',
+        },
+      ],
+      'crew': [
+        {
+          'img': ImageConstants.VENKAT_PRABHU,
+          'name': 'Venkat Prabhu',
+          'role': 'Director, Writer, Screenplay'
+        },
+        {
+          'img': ImageConstants.KALPATHI_AGHORAM,
+          'name': 'Kalpathi S Aghoram',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_GANESH,
+          'name': 'Kalpathi S Ganesh',
+          'role': 'Producer'
+        },
+        {
+          'img': ImageConstants.KALPATHI_SURESH,
+          'name': 'Kalpathi S Suresh',
+          'role': 'Producer'
+        },
+      ],
     },
   ];
 

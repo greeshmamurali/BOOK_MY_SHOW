@@ -1,13 +1,13 @@
-import 'dart:async';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
 import 'package:flutter_clone_book/main.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
-import 'package:flutter_clone_book/utils/constants/image_constants.dart';
+
 import 'package:flutter_clone_book/view/movie_description/movie_description.dart';
 import 'package:flutter_clone_book/view/upcoming_movies/upcoming_movies.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 
 class Movies extends StatefulWidget {
   const Movies({super.key});
