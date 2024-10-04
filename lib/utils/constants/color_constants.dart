@@ -57,34 +57,40 @@ class ColorConstants {
     Color(0xff76658a),
     Color(0xffa6b2be),
     Color(0xff8bbebc),
+     Color(0xff91b0c5),
   ];
 
   static const List<Color> COMEDY_MUSIC_AND_MORE = [
     Color(0xff8d6ba8),
     Color(0xffb19cc3),
     Color(0xff7c93bd),
+     Color(0xff91b0c5),
   ];
   static const List<Color> ENJOY_PLAYS_AND_PERFORMANCES = [
     Color(0xffa87e7f),
     Color(0xffc3a9b2),
     Color(0xffaf88a3),
+     Color(0xff91b0c5),
   ];
 
   static const List<Color> OUTDOOR_ADVENTURES = [
     Color(0xffd49a18),
     Color(0xffdfb896),
     Color(0xffcf9388),
+     Color(0xff91b0c5),
   ];
   static const List<Color> COURSES_AND_MASTERCLASS = [
     Color(0xffd49a18),
     Color(0xffdfb896),
     Color(0xffcf9388),
+     Color(0xff91b0c5),
   ];
 
   static const List<Color> THRILLING_ACTIVITIES = [
     Color(0xff76658a),
     Color(0xffa6b2be),
     Color(0xff8bbebc),
+     Color(0xff91b0c5),
   ];
 
   static const Color D_BG = Color(0xffe5e5e5);
@@ -92,4 +98,14 @@ class ColorConstants {
   static const Color MUSIC_SHOW = Color(0xff292f47);
   static const Color THUMB_UP = Color(0xff1ea73b);
   static const Color YOU_SHOULD_KNOW = Color(0xfffdf2ec);
+
+
+  static const Color LIVE_EVENT_BG = Color(0xff333333);
+
+  static const List<Color> LIVE_EVENTS_BLUE = [
+    Color.fromARGB(255, 32, 138, 209),
+    Color.fromARGB(255, 62, 107, 153),
+    Color.fromARGB(255, 45, 148, 167),
+     Color.fromARGB(255, 60, 139, 150),
+  ];
 }

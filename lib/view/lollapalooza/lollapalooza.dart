@@ -974,17 +974,7 @@ class _LollapaloozaState extends State<Lollapalooza> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.red.withOpacity(
-                                    0.5), // Reduce opacity to make shadow softer
-                                blurRadius:
-                                    15, // Larger blur for a more prominent shadow
-                                spreadRadius:
-                                    5, // Slight spread to extend the shadow outward
-                                offset: Offset(0, 10), // Shadow at the bottom
-                              ),
-                            ],
+                           
                           ),
                           child: Row(
                             children: [

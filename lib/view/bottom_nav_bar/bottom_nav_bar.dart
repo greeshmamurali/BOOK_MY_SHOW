@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 import 'package:flutter_clone_book/utils/constants/image_constants.dart';
 import 'package:flutter_clone_book/view/homescreen/homescreen.dart';
+import 'package:flutter_clone_book/view/liveEvents/liveEvents.dart';
 import 'package:flutter_clone_book/view/movies/movies.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -16,9 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List screens = [
     Homescreen(),
    Movies(),
-    Container(
-      color: Colors.brown,
-    ),
+    Liveevents(),
     Container(
       color: Colors.blue,
     ),

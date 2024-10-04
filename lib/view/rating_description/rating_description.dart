@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
+import 'package:flutter_clone_book/view/book_tickets/book_tickets.dart';
+import 'package:flutter_clone_book/view/movie_description/movie_description.dart';
 import 'package:flutter_clone_book/view/rating_screen/rating_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:share_plus/share_plus.dart';
@@ -11,7 +13,12 @@ class RatingDescription extends StatefulWidget {
   String? img;
   List reviews = [];
   RatingDescription(
-      {this.name, this.rating, this.votes, required this.reviews, this.img,super.key});
+      {this.name,
+      this.rating,
+      this.votes,
+      required this.reviews,
+      this.img,
+      super.key});
 
   @override
   State<RatingDescription> createState() => _RatingDescriptionState();
@@ -40,7 +47,6 @@ class _RatingDescriptionState extends State<RatingDescription>
         leading: InkWell(
           onTap: () {
             Navigator.pop(context);
-            
           },
           child: Icon(
             Icons.chevron_left,
@@ -52,22 +58,25 @@ class _RatingDescriptionState extends State<RatingDescription>
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
         ),
-
         actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) =>
-                                  RatingScreen(image: widget.img.toString(),
-                                  name: widget.name.toString(),
-                                  review: widget.reviews,),
-                          transitionsBuilder: itionAnimation,
-                        ));
-              },
-              child: FaIcon(FontAwesomeIcons.starHalf,color: Colors.black,)),
+                onTap: () {
+                  Navigator.of(context).push(PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        RatingScreen(
+                      image: widget.img.toString(),
+                      name: widget.name.toString(),
+                      review: widget.reviews,
+                    ),
+                    transitionsBuilder: itionAnimation,
+                  ));
+                },
+                child: FaIcon(
+                  FontAwesomeIcons.starHalf,
+                  color: Colors.black,
+                )),
           )
         ],
       ),
@@ -93,7 +102,7 @@ class _RatingDescriptionState extends State<RatingDescription>
                         size: 17,
                       ),
                       Text(
-                        ' ${widget.rating.toString()}/10',
+                        '  ${widget.rating.toString()}/10',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
@@ -109,17 +118,22 @@ class _RatingDescriptionState extends State<RatingDescription>
                     ],
                   ),
                   SizedBox(height: 15),
-                  Container(
-                    height: 30,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        color: ColorConstants.PRIMARY_COLOR,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Center(
-                      child: Text(
-                        'Book tickets',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 140,
+                      decoration: BoxDecoration(
+                          color: ColorConstants.PRIMARY_COLOR,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Center(
+                        child: Text(
+                          'Book tickets',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
@@ -127,8 +141,8 @@ class _RatingDescriptionState extends State<RatingDescription>
               ),
             )
           ];
-          },
-         body: Column(
+        },
+        body: Column(
           children: [
             TabBar(
               controller: _tabController,
@@ -330,7 +344,8 @@ class _RatingDescriptionState extends State<RatingDescription>
                           InkWell(
                             onTap: () {
                               setState(() {
-                                onTapUnHelpFull[index] = !onTapUnHelpFull[index];
+                                onTapUnHelpFull[index] =
+                                    !onTapUnHelpFull[index];
                               });
                             },
                             child: Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
+import 'package:flutter_clone_book/utils/constants/image_constants.dart';
 
 class gradientContainer extends StatelessWidget {
   String width;
@@ -7,14 +8,21 @@ class gradientContainer extends StatelessWidget {
   List color;
   String? title;
   String? eventNo;
-  gradientContainer({
-    required this.height,
-    required this.width,
-    required this.color,
-    this.title,
-    this.eventNo,
-    super.key,
-  });
+  String? img;
+  double? eventNoSize;
+  double? titleSize;
+  bool? box;
+  gradientContainer(
+      {required this.height,
+      required this.width,
+      required this.color,
+      this.title,
+      this.eventNo,
+      super.key,
+      this.eventNoSize = 8,
+      this.titleSize = 13,
+      this.box,
+      this.img});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +42,7 @@ class gradientContainer extends StatelessWidget {
               ])),
       child: Stack(
         children: [
+         
           Positioned(
               bottom: 0,
               left: 0,
@@ -44,23 +53,24 @@ class gradientContainer extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if(title!=null && title!.isNotEmpty)
-                    Text(
-                      title!,
-                      maxLines: 2,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold),
-                    ),
+                    if (title != null && title!.isNotEmpty)
+                      Text(
+                        title!,
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: titleSize,
+                            fontWeight: FontWeight.bold),
+                      ),
                     SizedBox(
                       height: 2,
                     ),
-                    if(eventNo!=null && eventNo!.isNotEmpty)
-                    Text(
-                      eventNo!,
-                      style: TextStyle(color: Colors.white, fontSize: 8),
-                    )
+                    if (eventNo != null && eventNo!.isNotEmpty)
+                      Text(
+                        eventNo!,
+                        style: TextStyle(
+                            color: Colors.white, fontSize: eventNoSize),
+                      )
                   ],
                 ),
               ))

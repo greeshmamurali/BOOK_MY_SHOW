@@ -148,4 +148,18 @@ class ImageConstants {
   static const String BUS = 'assets/images/bus.png';
   static const String AUTO = 'assets/images/rickshaw.png';
   static const String CAR4 = 'assets/images/racing-car.png';
+
+  static const String BOOKMYSHOW_EMBLEM = 'assets/images/bookmyshowem.jpeg';
+
+  static const String DEBIT_CARD = 'assets/images/debit-card.png';
+  static const String WALLET = 'assets/images/wallet.png';
+  static const String DESKTOP = 'assets/images/desktop.png';
+  static const String GOOGLE_PLAY = 'assets/images/google-play.png';
+  static const String VISA = 'assets/images/visa-logo.png';
+  static const String RUPAY = 'assets/images/rupay.png';
+  static const String UPI = 'assets/images/upi.png';
+
+
+  static const String HAPPY = 'assets/images/happy.png';
+ 
 }

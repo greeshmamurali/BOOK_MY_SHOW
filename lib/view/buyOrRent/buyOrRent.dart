@@ -2,7 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_book/dummydb.dart';
+import 'package:flutter_clone_book/main.dart';
 import 'package:flutter_clone_book/utils/constants/color_constants.dart';
+import 'package:flutter_clone_book/utils/constants/image_constants.dart';
+import 'package:flutter_clone_book/view/book_payment/book_payment.dart';
 import 'package:flutter_clone_book/view/compatible_devices/compatible_devices.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -15,9 +18,15 @@ class Buyorrent extends StatefulWidget {
 }
 
 class _BuyorrentState extends State<Buyorrent> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
   late List langs;
   late List subtitles;
   bool isExpanded = false;
+  
+  bool isEmailValid = false;
+  bool isPhoneValid = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +80,7 @@ class _BuyorrentState extends State<Buyorrent> {
         child: Column(
           children: [
             imageSection(context),
-            blackContainer(context),
+            blackContainer(context, widget.index),
             castSection(),
             Divider(
               height: 1,
@@ -309,7 +318,7 @@ class _BuyorrentState extends State<Buyorrent> {
     );
   }
 
-  Container blackContainer(BuildContext context) {
+  Container blackContainer(BuildContext context, int index) {
     return Container(
       padding: EdgeInsets.all(10),
       // height: 250,
@@ -355,7 +364,7 @@ class _BuyorrentState extends State<Buyorrent> {
             height: 10,
           ),
 
-          rentBuyContainers(context),
+          rentBuyContainers(context, widget.index),
 
           SizedBox(
             height: 10,
@@ -512,16 +521,16 @@ class _BuyorrentState extends State<Buyorrent> {
     );
   }
 
-  Row rentBuyContainers(BuildContext context) {
+  Row rentBuyContainers(BuildContext context, int index) {
     return Row(
       children: [
-        //rentModalSheet(context),
         InkWell(
           onTap: () {
             String type = 'Rent';
             String desc =
                 'You can rent this movie for 30 days but will have 2 days to watch it once you start playback (available for download)';
-            modalSheets(context, type, desc);
+            modalSheets(context, type, desc, index,
+                Dummydb.section11[widget.index]['rent']);
           },
           child: Container(
             height: 37,
@@ -548,7 +557,8 @@ class _BuyorrentState extends State<Buyorrent> {
             String type = 'Buy';
             String desc =
                 'Watch the movie any time after purchasing it (available for download)';
-                modalSheets(context, type, desc);
+            modalSheets(context, type, desc, index,
+                Dummydb.section11[widget.index]['buy']);
           },
           child: Container(
             height: 37,
@@ -571,7 +581,8 @@ class _BuyorrentState extends State<Buyorrent> {
     );
   }
 
-  Future<dynamic> modalSheets(BuildContext context, String type, String desc) {
+  Future<dynamic> modalSheets(
+      BuildContext context, String type, String desc, int index, String price) {
     return showModalBottomSheet(
       showDragHandle: true,
       context: context,
@@ -631,7 +642,7 @@ class _BuyorrentState extends State<Buyorrent> {
                         ),
                         Spacer(),
                         Text(
-                          '₹ ${Dummydb.section11[widget.index]['rent']}  ',
+                          '₹ ${price}  ',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -718,8 +729,6 @@ class _BuyorrentState extends State<Buyorrent> {
                   SizedBox(
                     height: 20,
                   ),
-                  // buyContnueModalSheet(context)
-
                   InkWell(
                     onTap: () {
                       showModalBottomSheet(
@@ -727,159 +736,514 @@ class _BuyorrentState extends State<Buyorrent> {
                         isScrollControlled: true,
                         context: context,
                         builder: (context) {
-                          return Container(
-                            child: Wrap(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                          return StatefulBuilder(
+                            builder: (context, setState) {
+                              return Container(
+                                child: Wrap(
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20.0, vertical: 10),
-                                      child: Text(
-                                        'Update Contact Details',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20.0),
-                                      child: Text(
-                                        'Email address',
-                                        style: TextStyle(
-                                            color: ColorConstants.GREY_COLOR,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20.0),
-                                      child: TextField(
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                        decoration: InputDecoration(
-                                            enabledBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                borderSide: BorderSide(
-                                                    color: ColorConstants
-                                                        .SEC4_GREY_COLOR,
-                                                    width: 1)),
-                                            focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                borderSide: BorderSide(
-                                                    width: 2,
-                                                    color: ColorConstants
-                                                        .GREY_COLOR))),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20.0),
-                                      child: Text(
-                                        'Phone number',
-                                        style: TextStyle(
-                                            color: ColorConstants.GREY_COLOR,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20.0),
-                                      child: TextField(
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                        decoration: InputDecoration(
-                                            enabledBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                borderSide: BorderSide(
-                                                    color: ColorConstants
-                                                        .SEC4_GREY_COLOR,
-                                                    width: 1)),
-                                            focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                borderSide: BorderSide(
-                                                    width: 2,
-                                                    color: ColorConstants
-                                                        .GREY_COLOR))),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 3,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20.0),
-                                      child: Text(
-                                        'Your number will only be used for transcation confirmation',
-                                        style: TextStyle(
-                                            color: ColorConstants.GREY_COLOR,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: Colors.grey,
-                                              spreadRadius: 2,
-                                              blurRadius: 3,
-                                              offset: Offset(0, -3)),
-                                        ],
-                                        color: Colors.white,
-                                      ),
-                                      height: 60,
-                                      width: double.infinity,
-                                      child: Container(
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 15, vertical: 10),
-                                        decoration: BoxDecoration(
-                                            color: ColorConstants.PRIMARY_COLOR,
-                                            borderRadius:
-                                                BorderRadius.circular(8)),
-                                        child: Center(
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0, vertical: 10),
                                           child: Text(
-                                            'Update Details',
+                                            'Update Contact Details',
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.black,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 20),
                                           ),
                                         ),
-                                      ),
+
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0),
+                                          child: Text(
+                                            'Email address',
+                                            style: TextStyle(
+                                                color:
+                                                    ColorConstants.GREY_COLOR,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+
+                                        //TextField of Email
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0),
+                                          child: TextField(
+                                            onChanged: (value) {
+                                              final RegExp emailRegex = RegExp(
+                                                r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                                              );
+
+                                              setState(() {
+                                                email = value;
+                                                isEmailValid =
+                                                    emailRegex.hasMatch(value);
+                                              });
+                                            },
+                                            controller: _emailController,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                            decoration: InputDecoration(
+                                                enabledBorder: OutlineInputBorder(
+                                                    borderRadius: BorderRadius
+                                                        .circular(8),
+                                                    borderSide: BorderSide(
+                                                        color: ColorConstants
+                                                            .SEC4_GREY_COLOR,
+                                                        width: 1)),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            width: 2,
+                                                            color: ColorConstants
+                                                                .GREY_COLOR))),
+                                          ),
+                                        ),
+
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0),
+                                          child: Text(
+                                            'Phone number',
+                                            style: TextStyle(
+                                                color:
+                                                    ColorConstants.GREY_COLOR,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+
+                                        //Textfield of Ph no
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0),
+                                          child: TextField(
+                                            onChanged: (value) {
+                                              final RegExp phoneRegex =
+                                                  RegExp(r'^\d{10}$');
+
+                                              setState(() {
+                                                phno = value;
+                                                isPhoneValid =
+                                                    phoneRegex.hasMatch(value);
+                                               
+                                              });
+                                            },
+                                            controller: _phoneController,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                            decoration: InputDecoration(
+                                                enabledBorder: OutlineInputBorder(
+                                                    borderRadius: BorderRadius
+                                                        .circular(8),
+                                                    borderSide: BorderSide(
+                                                        color: ColorConstants
+                                                            .SEC4_GREY_COLOR,
+                                                        width: 1)),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            width: 2,
+                                                            color: ColorConstants
+                                                                .GREY_COLOR))),
+                                          ),
+                                        ),
+
+                                        SizedBox(
+                                          height: 3,
+                                        ),
+
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0),
+                                          child: Text(
+                                            'Your number will only be used for transcation confirmation',
+                                            style: TextStyle(
+                                                color:
+                                                    ColorConstants.GREY_COLOR,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14),
+                                          ),
+                                        ),
+
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+
+                                        //update details button
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  color: Colors.grey,
+                                                  spreadRadius: 2,
+                                                  blurRadius: 3,
+                                                  offset: Offset(0, -3)),
+                                            ],
+                                            color: Colors.white,
+                                          ),
+                                          height: 60,
+                                          width: double.infinity,
+                                          child: InkWell(
+                                            //on tapping update details ,navigate to payment selection modal sheet
+                                            onTap: () {
+                                              showModalBottomSheet(
+                                                isScrollControlled: true,
+                                                context: context,
+                                                builder: (context) {
+                                                  return Container(
+                                                    color: Colors.black,
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 15,
+                                                            vertical: 20),
+                                                    child: Wrap(
+                                                      children: [
+                                                        Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Choose how to check out',
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontSize: 17,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+
+                                                            SizedBox(
+                                                              height: 15,
+                                                            ),
+
+                                                            Text(
+                                                              'Choose who will manage all aspects of your purchase. Benefits and available forms of payment may vary.',
+                                                              maxLines: 3,
+                                                              style: TextStyle(
+                                                                  color: ColorConstants
+                                                                      .SEC4_GREY_COLOR,
+                                                                  fontSize: 14,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w700),
+                                                            ),
+
+                                                            SizedBox(
+                                                              height: 10,
+                                                            ),
+
+                                                            //BookMyShow Container
+                                                            InkWell(
+                                                              onTap: () {
+                                                               
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .push(
+                                                                        PageRouteBuilder(
+                                                                  pageBuilder: (context,
+                                                                          animation,
+                                                                          secondaryAnimation) =>
+                                                                      BookPayment(
+                                                                    index:
+                                                                        index,
+                                                                    type: type,
+                                                                    price: price
+                                                                        .toString(),
+                                                                    email:
+                                                                        email,
+                                                                    phno: phno,
+                                                                  ),
+                                                                  transitionsBuilder:
+                                                                      itionAnimation,
+                                                                ));
+                                                              },
+                                                              child: Container(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        left:
+                                                                            15,
+                                                                        top: 10,
+                                                                        bottom:
+                                                                            10),
+                                                                decoration: BoxDecoration(
+                                                                    color: const Color
+                                                                        .fromARGB(
+                                                                        255,
+                                                                        17,
+                                                                        17,
+                                                                        17),
+                                                                    border: Border.all(
+                                                                        width:
+                                                                            1,
+                                                                        color: Colors
+                                                                            .grey),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            5)),
+                                                                child: Row(
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Image.asset(
+                                                                      ImageConstants
+                                                                          .BOOKMYSHOW_EMBLEM,
+                                                                      height:
+                                                                          20,
+                                                                      width: 20,
+                                                                      fit: BoxFit
+                                                                          .fill,
+                                                                    ),
+                                                                    SizedBox(
+                                                                      width: 10,
+                                                                    ),
+                                                                    Column(
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Text(
+                                                                          'BookMyShow | Movies ',
+                                                                          style: TextStyle(
+                                                                              color: const Color.fromARGB(255, 226, 223, 223),
+                                                                              fontSize: 20,
+                                                                              fontWeight: FontWeight.bold,
+                                                                              overflow: TextOverflow.visible),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              10,
+                                                                        ),
+                                                                        Row(
+                                                                          children: [
+                                                                            Container(
+                                                                                color: Colors.white,
+                                                                                height: 24,
+                                                                                width: 30,
+                                                                                child: Center(
+                                                                                    child: Image(
+                                                                                  image: AssetImage(ImageConstants.DEBIT_CARD),
+                                                                                  fit: BoxFit.fill,
+                                                                                ))),
+                                                                            SizedBox(
+                                                                              width: 4,
+                                                                            ),
+                                                                            Container(
+                                                                                color: Colors.white,
+                                                                                height: 24,
+                                                                                width: 30,
+                                                                                child: Center(child: Image(image: AssetImage(ImageConstants.WALLET)))),
+                                                                            SizedBox(
+                                                                              width: 4,
+                                                                            ),
+                                                                            Container(
+                                                                                color: Colors.white,
+                                                                                height: 24,
+                                                                                width: 30,
+                                                                                child: Center(child: Image(image: AssetImage(ImageConstants.DESKTOP)))),
+                                                                            SizedBox(
+                                                                              width: 4,
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              20,
+                                                                        ),
+                                                                        Text(
+                                                                          'and more',
+                                                                          style: TextStyle(
+                                                                              color: ColorConstants.SEC4_GREY_COLOR,
+                                                                              fontSize: 16),
+                                                                        )
+                                                                      ],
+                                                                    )
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+
+                                                            SizedBox(
+                                                              height: 11,
+                                                            ),
+
+                                                            //Google Play Container
+                                                            Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      left: 15,
+                                                                      top: 10,
+                                                                      bottom:
+                                                                          10),
+                                                              decoration: BoxDecoration(
+                                                                  color: const Color
+                                                                      .fromARGB(
+                                                                      255,
+                                                                      17,
+                                                                      17,
+                                                                      17),
+                                                                  border: Border.all(
+                                                                      width: 1,
+                                                                      color: Colors
+                                                                          .grey),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              5)),
+                                                              child: Row(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Image.asset(
+                                                                    ImageConstants
+                                                                        .GOOGLE_PLAY,
+                                                                    height: 20,
+                                                                    width: 20,
+                                                                    fit: BoxFit
+                                                                        .fill,
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width: 10,
+                                                                  ),
+                                                                  Column(
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Text(
+                                                                        'Google Play',
+                                                                        style: TextStyle(
+                                                                            color: const Color.fromARGB(
+                                                                                255,
+                                                                                226,
+                                                                                223,
+                                                                                223),
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            overflow: TextOverflow.visible),
+                                                                      ),
+                                                                      SizedBox(
+                                                                        height:
+                                                                            10,
+                                                                      ),
+                                                                      Row(
+                                                                        children: [
+                                                                          Container(
+                                                                              color: Colors.white,
+                                                                              height: 24,
+                                                                              width: 30,
+                                                                              child: Center(
+                                                                                  child: Image(
+                                                                                image: AssetImage(ImageConstants.GOOGLE_PLAY),
+                                                                                fit: BoxFit.fill,
+                                                                              ))),
+                                                                          SizedBox(
+                                                                            width:
+                                                                                4,
+                                                                          ),
+                                                                          Container(
+                                                                              color: Colors.white,
+                                                                              height: 24,
+                                                                              width: 30,
+                                                                              child: Center(child: Image(image: AssetImage(ImageConstants.VISA)))),
+                                                                          SizedBox(
+                                                                            width:
+                                                                                4,
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                      SizedBox(
+                                                                        height:
+                                                                            20,
+                                                                      ),
+                                                                      Text(
+                                                                        'and more',
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                ColorConstants.SEC4_GREY_COLOR,
+                                                                            fontSize: 16),
+                                                                      )
+                                                                    ],
+                                                                  )
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            child: Container(
+                                              margin: EdgeInsets.symmetric(
+                                                  horizontal: 15, vertical: 10),
+                                              decoration: BoxDecoration(
+                                                  color: (isEmailValid &&
+                                                          isPhoneValid)
+                                                      ? ColorConstants
+                                                          .PRIMARY_COLOR
+                                                      : ColorConstants
+                                                          .SEC4_GREY_COLOR,
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: Center(
+                                                child: Text(
+                                                  'Update Details',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 20),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
-                              ],
-                            ),
+                              );
+                            },
                           );
                         },
                       );
@@ -921,366 +1285,6 @@ class _BuyorrentState extends State<Buyorrent> {
           ),
         );
       },
-    );
-  }
-
-  InkWell rentModalSheet(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        showModalBottomSheet(
-          showDragHandle: true,
-          context: context,
-          builder: (context) {
-            return Container(
-              child: Wrap(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        child: Text(
-                          'Rent',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 19),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 2,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(
-                          'You can rent this movie for 30 days but will have 2 days to watch it once you start playback (available for download)',
-                          maxLines: 3,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Divider(
-                        height: 1,
-                        color: ColorConstants.SEC4_GREY_COLOR.withOpacity(.4),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          children: [
-                            Text(
-                              '4K',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 19),
-                            ),
-                            Spacer(),
-                            Text(
-                              '₹ ${Dummydb.section11[widget.index]['rent']}  ',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 19),
-                            ),
-                            Icon(
-                              Icons.check_circle_rounded,
-                              color: ColorConstants.THUMB_UP,
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(PageRouteBuilder(
-                            pageBuilder:
-                                (context, animation, secondaryAnimation) =>
-                                    CompatibleDevices(
-                              title: 'Compatible Devices',
-                            ),
-                            transitionsBuilder: itionAnimation,
-                          ));
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: RichText(
-                              maxLines: 2,
-                              text: TextSpan(
-                                  text:
-                                      'Streaming supported on mobile, website, Android TV, Apple TV, and Fire TV. Plays on',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500),
-                                  children: [
-                                    TextSpan(
-                                      text: ' compatible devices',
-                                      style: TextStyle(
-                                          decoration: TextDecoration.underline,
-                                          color: ColorConstants.PRIMARY_COLOR,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500),
-                                    )
-                                  ])),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(PageRouteBuilder(
-                            pageBuilder:
-                                (context, animation, secondaryAnimation) =>
-                                    CompatibleDevices(
-                              title: 'Terms and Conditions',
-                            ),
-                            transitionsBuilder: itionAnimation,
-                          ));
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: RichText(
-                              maxLines: 2,
-                              text: TextSpan(
-                                  text: 'By continuing, you agree to the',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500),
-                                  children: [
-                                    TextSpan(
-                                      text: ' Terms and Conditions',
-                                      style: TextStyle(
-                                          decoration: TextDecoration.underline,
-                                          color: ColorConstants.PRIMARY_COLOR,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500),
-                                    )
-                                  ])),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      buyContnueModalSheet(context)
-                    ],
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
-      child: Container(
-        height: 37,
-        width: MediaQuery.of(context).size.width * .45,
-        decoration: BoxDecoration(
-            color: ColorConstants.PRIMARY_COLOR,
-            borderRadius: BorderRadius.circular(10)),
-        child: Center(
-          child: Text(
-            'Rent ₹${Dummydb.section11[widget.index]['rent']}',
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-          ),
-        ),
-      ),
-    );
-  }
-
-  InkWell buyContnueModalSheet(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        showModalBottomSheet(
-          showDragHandle: true,
-          isScrollControlled: true,
-          context: context,
-          builder: (context) {
-            return Container(
-              child: Wrap(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 10),
-                        child: Text(
-                          'Update Contact Details',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text(
-                          'Email address',
-                          style: TextStyle(
-                              color: ColorConstants.GREY_COLOR,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: TextField(
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                          decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                  borderSide: BorderSide(
-                                      color: ColorConstants.SEC4_GREY_COLOR,
-                                      width: 1)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                  borderSide: BorderSide(
-                                      width: 2,
-                                      color: ColorConstants.GREY_COLOR))),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text(
-                          'Phone number',
-                          style: TextStyle(
-                              color: ColorConstants.GREY_COLOR,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: TextField(
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                          decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                  borderSide: BorderSide(
-                                      color: ColorConstants.SEC4_GREY_COLOR,
-                                      width: 1)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                  borderSide: BorderSide(
-                                      width: 2,
-                                      color: ColorConstants.GREY_COLOR))),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 3,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text(
-                          'Your number will only be used for transcation confirmation',
-                          style: TextStyle(
-                              color: ColorConstants.GREY_COLOR,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey,
-                                spreadRadius: 2,
-                                blurRadius: 3,
-                                offset: Offset(0, -3)),
-                          ],
-                          color: Colors.white,
-                        ),
-                        height: 60,
-                        width: double.infinity,
-                        child: Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 10),
-                          decoration: BoxDecoration(
-                              color: ColorConstants.PRIMARY_COLOR,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: Center(
-                            child: Text(
-                              'Update Details',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 2,
-                blurRadius: 3,
-                offset: Offset(0, -3)),
-          ],
-          color: Colors.white,
-        ),
-        height: 60,
-        width: double.infinity,
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          decoration: BoxDecoration(
-              color: ColorConstants.PRIMARY_COLOR,
-              borderRadius: BorderRadius.circular(8)),
-          child: Center(
-            child: Text(
-              'Continue',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
-            ),
-          ),
-        ),
-      ),
     );
   }
 

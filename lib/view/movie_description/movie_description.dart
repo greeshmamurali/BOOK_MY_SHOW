@@ -454,10 +454,26 @@ class _MovieDescriptionState extends State<MovieDescription> {
                     fontSize: 18),
               ),
               Spacer(),
-              Text(
-                '${reviews.length} reviews >',
-                style: TextStyle(
-                    color: ColorConstants.PRIMARY_COLOR, fontSize: 16),
+              InkWell(
+                onTap: () {
+                   Navigator.of(context).push(PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  RatingDescription(
+                                     name: widget.name,
+                                    rating: widget.rating,
+                                    votes: widget.votes,
+                                    reviews: reviews,
+                                    img: widget.img,
+                                  ),
+                          transitionsBuilder: itionAnimation,
+                        ));
+                },
+                child: Text(
+                  '${reviews.length} reviews >',
+                  style: TextStyle(
+                      color: ColorConstants.PRIMARY_COLOR, fontSize: 16),
+                ),
               )
             ],
           ),
@@ -495,201 +511,217 @@ class _MovieDescriptionState extends State<MovieDescription> {
                 DateTime currentDate = DateTime.now();
                 int daysago = currentDate.difference(reviewDate).inDays;
 
-                return Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                  width: 310,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          width: 1, color: ColorConstants.GREY_COLOR),
-                      borderRadius: BorderRadius.circular(7)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 16,
-                            backgroundColor:
-                                ColorConstants.SEC4_GREY_COLOR.withOpacity(.4),
-                            child: Center(
-                                child: Icon(
-                              Icons.person,
-                              color: Colors.white,
-                            )),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            review['name'],
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
-                          ),
-                          Spacer(),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: ColorConstants.PRIMARY_COLOR,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                '${review['rating']}/10',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        review['hashtags'],
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          final span = TextSpan(
-                              text: review['desc'],
+                return InkWell(
+                  onTap: () {
+                     Navigator.of(context).push(PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  RatingDescription(
+                                     name: widget.name,
+                                    rating: widget.rating,
+                                    votes: widget.votes,
+                                    reviews: reviews,
+                                    img: widget.img,
+                                  ),
+                          transitionsBuilder: itionAnimation,
+                        ));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                    width: 310,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 1, color: ColorConstants.GREY_COLOR),
+                        borderRadius: BorderRadius.circular(7)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 16,
+                              backgroundColor:
+                                  ColorConstants.SEC4_GREY_COLOR.withOpacity(.4),
+                              child: Center(
+                                  child: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                              )),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              review['name'],
                               style: TextStyle(
-                                  fontSize: 15,
-                                  color: ColorConstants.SEC4_GREY_COLOR));
-
-                          final painter = TextPainter(
-                            text: span,
-                            maxLines: 2,
-                            textDirection: TextDirection.ltr,
-                          )..layout(maxWidth: constraints.maxWidth);
-
-                          final textOverflow2 = painter.didExceedMaxLines;
-
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                review['desc'],
-                                maxLines: 2,
-                                style: TextStyle(
-                                    color: ColorConstants.SEC4_GREY_COLOR,
-                                    fontSize: 13),
-                              ),
-                              if (textOverflow2)
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
+                            Spacer(),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: ColorConstants.PRIMARY_COLOR,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
                                 Text(
-                                  'Read More >',
+                                  '${review['rating']}/10',
                                   style: TextStyle(
-                                      color: ColorConstants.PRIMARY_COLOR,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold),
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
                                 )
-                            ],
-                          );
-                        },
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        children: [
-                          Row(
-                            children: [
-                              GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      if (!like[index]) {
-                                        like[index] = true;
-                                        likeCount[index]++;
-                                      }
-                                    });
-                                  },
-                                  child: Icon(
-                                    Icons.thumb_up_rounded,
-                                    color: like[index]
-                                        ? ColorConstants.PRIMARY_COLOR
-                                        : ColorConstants.GREY_COLOR,
-                                    size: 15,
-                                  )),
-                              SizedBox(
-                                width: 3,
-                              ),
-                              likeCount[index] > 0
-                                  ? Text(
-                                      '${likeCount[index]}',
-                                      style: TextStyle(
-                                          color: ColorConstants.SEC4_GREY_COLOR,
-                                          fontSize: 14),
-                                    )
-                                  : Text('')
-                            ],
-                          ),
-                          SizedBox(
-                            width: 30,
-                          ),
-                          Row(
-                            children: [
-                              GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      if (!disLike[index]) {
-                                        disLike[index] = true;
-                                        disLikeCount[index]++;
-                                      }
-                                    });
-                                  },
-                                  child: Icon(
-                                    Icons.thumb_down_rounded,
-                                    color: disLike[index]
-                                        ? ColorConstants.PRIMARY_COLOR
-                                        : ColorConstants.GREY_COLOR,
-                                    size: 15,
-                                  )),
-                              SizedBox(
-                                width: 3,
-                              ),
-                              disLikeCount[index] > 0
-                                  ? Text(
-                                      '${disLikeCount[index]}',
-                                      style: TextStyle(
-                                          color: ColorConstants.SEC4_GREY_COLOR,
-                                          fontSize: 14),
-                                    )
-                                  : Text(''),
-                              SizedBox(
-                                width: 65,
-                              ),
-                              Text(
-                                '${daysago.toString()} Days ago',
+                              ],
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          review['hashtags'],
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        LayoutBuilder(
+                          builder: (context, constraints) {
+                            final span = TextSpan(
+                                text: review['desc'],
                                 style: TextStyle(
-                                    color: ColorConstants.SEC4_GREY_COLOR,
-                                    fontSize: 14),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Icon(
-                                Icons.more_vert,
-                                color: ColorConstants.SEC4_GREY_COLOR,
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
+                                    fontSize: 15,
+                                    color: ColorConstants.SEC4_GREY_COLOR));
+                  
+                            final painter = TextPainter(
+                              text: span,
+                              maxLines: 2,
+                              textDirection: TextDirection.ltr,
+                            )..layout(maxWidth: constraints.maxWidth);
+                  
+                            final textOverflow2 = painter.didExceedMaxLines;
+                  
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  review['desc'],
+                                  maxLines: 2,
+                                  style: TextStyle(
+                                      color: ColorConstants.SEC4_GREY_COLOR,
+                                      fontSize: 13),
+                                ),
+                                if (textOverflow2)
+                                  Text(
+                                    'Read More >',
+                                    style: TextStyle(
+                                        color: ColorConstants.PRIMARY_COLOR,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                              ],
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Row(
+                              children: [
+                                GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        if (!like[index]) {
+                                          like[index] = true;
+                                          likeCount[index]++;
+                                        }
+                                      });
+                                    },
+                                    child: Icon(
+                                      Icons.thumb_up_rounded,
+                                      color: like[index]
+                                          ? ColorConstants.PRIMARY_COLOR
+                                          : ColorConstants.GREY_COLOR,
+                                      size: 15,
+                                    )),
+                                SizedBox(
+                                  width: 3,
+                                ),
+                                likeCount[index] > 0
+                                    ? Text(
+                                        '${likeCount[index]}',
+                                        style: TextStyle(
+                                            color: ColorConstants.SEC4_GREY_COLOR,
+                                            fontSize: 14),
+                                      )
+                                    : Text('')
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        if (!disLike[index]) {
+                                          disLike[index] = true;
+                                          disLikeCount[index]++;
+                                        }
+                                      });
+                                    },
+                                    child: Icon(
+                                      Icons.thumb_down_rounded,
+                                      color: disLike[index]
+                                          ? ColorConstants.PRIMARY_COLOR
+                                          : ColorConstants.GREY_COLOR,
+                                      size: 15,
+                                    )),
+                                SizedBox(
+                                  width: 3,
+                                ),
+                                disLikeCount[index] > 0
+                                    ? Text(
+                                        '${disLikeCount[index]}',
+                                        style: TextStyle(
+                                            color: ColorConstants.SEC4_GREY_COLOR,
+                                            fontSize: 14),
+                                      )
+                                    : Text(''),
+                                SizedBox(
+                                  width: 65,
+                                ),
+                                Text(
+                                  '${daysago.toString()} Days ago',
+                                  style: TextStyle(
+                                      color: ColorConstants.SEC4_GREY_COLOR,
+                                      fontSize: 14),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Icon(
+                                  Icons.more_vert,
+                                  color: ColorConstants.SEC4_GREY_COLOR,
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 );
               },

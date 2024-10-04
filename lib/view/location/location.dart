@@ -19,10 +19,10 @@ class _LocationState extends State<Location> {
    List<dynamic> displayLocations = [];
 
   void initState() {
-    // Initially, filteredCities will have all cities
+    
     filteredCities = Dummydb.cities;
     filteredLocation = Dummydb.location;
-    // Listen to changes in the text field
+    
     _textEditingController.addListener(_filterCities);
    
   }
@@ -50,10 +50,7 @@ class _LocationState extends State<Location> {
     });
   }
 
-  /// Determine the current position of the device.
-  ///
-  /// When the location services are not enabled or permissions
-  /// are denied the `Future` will return an error.
+
   Future<Position> _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -200,13 +197,13 @@ class _LocationState extends State<Location> {
   }
 
   Widget popularCities() {
-    displayLocations = tap ? filteredLocation : Dummydb.location;
+  
     return SizedBox(
       height: 280,
       child: GridView.builder(
        
         
-        itemCount: displayLocations.length,
+        itemCount: filteredLocation.length,
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
         itemBuilder: (context, index) {
@@ -214,7 +211,7 @@ class _LocationState extends State<Location> {
           return InkWell(
             onTap: () {
               setState(() {
-                selectedPlace = displayLocations[index]['name'];
+                selectedPlace = filteredLocation[index]['name'];
                 Navigator.pop(context, selectedPlace);
                
               });
@@ -228,7 +225,7 @@ class _LocationState extends State<Location> {
               child: Column(
                 children: [
                   Image(
-                    image: AssetImage(displayLocations[index]['img']),
+                    image: AssetImage(filteredLocation[index]['img']),
                     height: 35,
                     width: 35,
                   ),
@@ -237,7 +234,7 @@ class _LocationState extends State<Location> {
                   ),
                   Expanded(
                     child: Text(
-                      displayLocations[index]['name'],
+                     filteredLocation[index]['name'],
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w500,

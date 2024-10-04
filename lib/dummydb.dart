@@ -1925,46 +1925,51 @@ class Dummydb {
   static const List MUST_ATTEND_EVENTS = [
     {
       'img': ImageConstants.RAMBO_CIRCUS,
-      'date': 'Thu, 12 Sep onwards',
+      'type':'Performances',
+      'desc':"Step right up for an unforgettable experience at Rambo Circus, where thrill and excitement meet spectacular performances – fun for the whole family!",
+      'price':'₹400 onwards',
+      'date': 'Wed, 9 Oct onwards',
       'name': 'Rambo Circus - Kochi',
       'location': 'Sree Gokulam Convention Centre, Kochi'
     },
     {
       'img': ImageConstants.SUNBURN,
       'date': 'Sun, 6 Oct',
+      'type':"Music Shows",
+      'price':'₹ 2000 onwards',
       'name': 'Sunburn Arena Ft. Alan Walker - Kochi',
+      'desc':"Get ready for an unforgettable night as Sunburn Arena ft. Alan Walker lights up Kochi on [date] – don't miss the ultimate EDM experience!",
       'location': 'Bolgatty Palace and Island Resort: Kochi'
     },
     {
       'img': ImageConstants.JUSTMARRIED,
-      'date': 'Sat, 14 Sep',
+      'date': 'Sat, 12 Oct',
+      'type':"Comedy Shows",
+      'price':'₹ 499',
+      'desc': "Join Navin Kumar for a hilarious ride of marital misadventures in his English stand-up solo, Just Married, live on stage!",
       'name': 'Just Married by Navin Kumar(English Stand Up Solo)',
       'location': 'Wire Up: Benglaru Stand up Comedy'
     },
     {
       'img': ImageConstants.READBETWEEN,
       'date': 'Wed, 18 Sep',
+      'type':"Comedy Shows",
+      'price':'₹ 599',
+      'desc':  "Catch Naveen Richard's witty and hilarious take on life in his stand-up special Read Between The Lines – a comedy show you don't want to miss!",
       'name': 'Read Between The Lines by Naveen Richard',
       'location': 'Spotlight Socials: Kochi Stand up Comedy'
     },
-    {
-      'img': ImageConstants.KSCHITRA,
-      'date': 'Fri, 13 Sep',
-      'name': 'Live Concert of Ks Chithra and Madhu Balakrishnan',
-      'location': 'Winsor Castle Convention Centre: Kottayam'
-    },
+   
     {
       'img': ImageConstants.MALAYALAM,
       'date': 'Sat, 21 Sep onwards',
+      'type':"Comedy Shows",
+      'price':'₹ 599 onwards',
+      'desc': "Join us for a lively and interactive Malayalam Crowd Work Show, where the audience becomes part of the comedy experience – laughter guaranteed!",
       'name': 'Malayalam Crowd Work Show',
       'location': 'Commons: Kochi'
     },
-    {
-      'img': ImageConstants.ONAM_SADHYA,
-      'date': 'Sun, 15 Sep',
-      'name': 'Onam Sadhya at Jetty, Forte Kochi Hotel',
-      'location': 'Jetty And Poolside At Hotel Forte: Kochi'
-    },
+    
   ];
 
   static const List LAUGHTER_CATEGORY = [
@@ -2052,24 +2057,9 @@ class Dummydb {
       'location': 'Unique Tours',
       'date': 'Tue, 10 Sep onwards'
     },
-    {
-      'img': ImageConstants.INDIAN,
-      'name': 'Indian Music Experience Museum',
-      'location': 'Museums',
-      'date': 'Tue, 10 Sep onwards'
-    },
-    {
-      'img': ImageConstants.VALLAMKALI,
-      'name': 'Vallam Kali - Snake Boat Race',
-      'location': 'Unique Tours',
-      'date': 'Sat, 28 Sep'
-    },
-    {
-      'img': ImageConstants.ONAM_SADHYA,
-      'date': 'Sun, 15 Sep',
-      'name': 'Onam Sadhya at Jetty, Forte Kochi Hotel',
-      'location': 'Festivals'
-    },
+  
+   
+   
   ];
 
   static const List MUSIC_STUDIO = [
@@ -2095,13 +2085,7 @@ class Dummydb {
     //   'category': 'Concerts'
     // },
 
-    {
-      'img': ImageConstants.KSCHITRA,
-      'date': 'Fri, 13 Sep',
-      'name': 'Live Concert of Ks Chithra and Madhu Balakrishnan',
-      'location': 'Winsor Castle Convention Centre: Kottayam',
-      'category': 'Concerts'
-    },
+   
     {
       'img': ImageConstants.BANDLAND,
       'date': 'Sat, 23 Nov',

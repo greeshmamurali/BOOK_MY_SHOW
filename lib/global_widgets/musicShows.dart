@@ -8,9 +8,8 @@ import 'package:flutter_clone_book/utils/constants/color_constants.dart';
 
 class MusicShows extends StatefulWidget {
   List dataBase;
-  MusicShows({
-    required this.dataBase,
-    super.key});
+  String text;
+  MusicShows({required this.dataBase, required this.text, super.key});
 
   @override
   State<MusicShows> createState() => _MusicShowsState();
@@ -51,7 +50,7 @@ class _MusicShowsState extends State<MusicShows> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Music Shows',
+                widget.text,
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -269,7 +268,6 @@ class _MusicShowsState extends State<MusicShows> {
                   height: 6,
                 ),
                 Text(
-                  
                   widget.dataBase[index]['location'],
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

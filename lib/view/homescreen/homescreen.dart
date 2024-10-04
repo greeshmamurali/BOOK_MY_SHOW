@@ -59,7 +59,7 @@ class _HomescreenState extends State<Homescreen> {
         currentPage1 = 0;
       }
 
-      controller.animateToPage(currentPage2,
+      controller.animateToPage(currentPage1,
           duration: Duration(seconds: 2), curve: Curves.fastLinearToSlowEaseIn);
     });
 
@@ -820,53 +820,12 @@ class _HomescreenState extends State<Homescreen> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return Container(
-                width: double.parse(Dummydb.event1[index]['width']),
-                //  height: 190,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: <Color>[
-                          Dummydb.event1[index]['color'][0],
-                          Dummydb.event1[index]['color'][1],
-                          Dummydb.event1[index]['color'][2],
-                        ])),
-                child: Stack(
-                  children: [
-                    Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                Dummydb.event1[index]['text'],
-                                maxLines: 2,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Text(
-                                Dummydb.event1[index]['events'],
-                                style:
-                                    TextStyle(color: Colors.white, fontSize: 8),
-                              )
-                            ],
-                          ),
-                        ))
-                  ],
-                ),
-              );
+              return gradientContainer(
+                  height: 190,
+                  width: Dummydb.event1[index]['width'],
+                  color: Dummydb.event1[index]['color'],
+                  title: Dummydb.event1[index]['text'],
+                  eventNo: Dummydb.event1[index]['events'],);
             },
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -1006,7 +965,7 @@ class _HomescreenState extends State<Homescreen> {
                                     height: 50,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
+                                        borderRadius: BorderRadius.circular(7),
                                         color: ColorConstants.PRIMARY_COLOR),
                                     child: Center(
                                       child: Text(
@@ -1470,6 +1429,7 @@ class _HomescreenState extends State<Homescreen> {
                       pageBuilder: (context, animation, secondaryAnimation) =>
                           MusicShows(
                         dataBase: Dummydb.MUSIC_STUDIO,
+                        text: 'Music Shows',
                       ),
                       transitionsBuilder: itionAnimation,
                     ));
@@ -1522,7 +1482,10 @@ class _HomescreenState extends State<Homescreen> {
                   onTap: () {
                     Navigator.of(context).push(PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) =>
-                          MusicShows(dataBase: Dummydb.Games),
+                          MusicShows(
+                        dataBase: Dummydb.Games,
+                        text: 'Sports',
+                      ),
                       transitionsBuilder: itionAnimation,
                     ));
                   },
@@ -1552,7 +1515,10 @@ class _HomescreenState extends State<Homescreen> {
                   onTap: () {
                     Navigator.of(context).push(PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) =>
-                          MusicShows(dataBase: Dummydb.LAUGHTER_CATEGORY),
+                          MusicShows(
+                        dataBase: Dummydb.LAUGHTER_CATEGORY,
+                        text: 'Comdey Shows',
+                      ),
                       transitionsBuilder: itionAnimation,
                     ));
                   },
